@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { 
   View,
   SafeAreaView,
-  StyleSheet,
 } from "react-native";
 import { 
     Divider,
@@ -10,25 +9,7 @@ import {
     Switch 
 } from 'react-native-paper';
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignContent:'center',
-    },
-    categoryText: {
-    color:'gray',
-        fontSize: 24
-    },
-    settingText: {
-        color:'black',
-        fontSize: 18
-    },
-    switch: {
-        flexDirection:'row',
-        paddingVertical:'3%',
-        justifyContent:'space-between'
-    }
-});
+import { styles } from "../assets/styles";
 
 function SettingsScreen({navigation}) {
     const [isEnabled, setIsEnabled] = useState(false);

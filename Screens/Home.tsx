@@ -2,17 +2,12 @@ import React from "react";
 import { 
   View,
   SafeAreaView,
-  StyleSheet,
   Vibration,
 } from "react-native";
 import { Button } from 'react-native-paper';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignContent: 'center',
-  },
-});
+import { styles } from "../assets/styles";
+
 
 function HomeScreen({navigation}) {
   return (

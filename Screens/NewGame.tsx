@@ -2,16 +2,10 @@ import React from "react";
 import { 
   View,
   SafeAreaView,
-  StyleSheet,
   Text,
 } from "react-native";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignContent: 'center',
-  },
-});
+import { styles } from "../assets/styles";
 
 function NewGameScreen({navigation}) {
 

@@ -3,11 +3,11 @@ import {StatusBar, Vibration} from "react-native";
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {IconButton} from 'react-native-paper';
-import Icon from 'react-native-vector-icons';
 
 import HomeScreen from "./Screens/Home";
 import NewGameScreen from "./Screens/NewGame";
 import SettingsScreen from "./Screens/Settings";
+import { colors } from "./assets/styles";
 
 import {version} from "./package.json";
 
@@ -17,7 +17,7 @@ export default function app() {
   return(
     <NavigationContainer>
       <StatusBar
-            backgroundColor='#449e48'/>
+            backgroundColor={colors.fribaGreen}/>
       <Stack.Navigator initialRouteName="HomeScreen">
         <Stack.Screen
           name="HomeScreen"
@@ -26,7 +26,10 @@ export default function app() {
             {
               title: 'LÄTTYGOLF v' + version, 
               headerRight: () => (
-                <IconButton icon='info' onPress={() => {
+                <IconButton 
+                icon='cog'
+                size={20} 
+                onPress={() => {
                   Vibration.vibrate(50);
                   navigation.navigate('SettingsScreen')
                 }}/>
