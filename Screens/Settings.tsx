@@ -17,15 +17,12 @@ function SettingsScreen({navigation}) {
 
     return (
       <SafeAreaView style={styles.container}>
-        <View style={{
-            paddingHorizontal:'5%',
-            paddingVertical:'5%',
-        }}>
+        <View style={styles.screen}>
             <Text style={styles.categoryText}>
                 App Settings
             </Text>
             <Divider bold/>
-            <View style={styles.switch}>
+            <View style={styles.option}>
                 <Text style={styles.settingText}>
                     Haptic feedback
                 </Text>

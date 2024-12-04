@@ -6,7 +6,7 @@ import {
 } from "react-native";
 import { Button } from 'react-native-paper';
 
-import { styles } from "../assets/styles";
+import { styles, colors } from "../assets/styles";
 
 
 function HomeScreen({navigation}) {
@@ -15,10 +15,11 @@ function HomeScreen({navigation}) {
       <View style={
         {
           paddingHorizontal:'25%',
-          paddingTop:'10%',
-          paddingBottom:'5%'
+          paddingTop:'90%',
         }}>
         <Button
+          mode='contained'
+          buttonColor={colors.fribaGreen}
           onPress={() => {
             Vibration.vibrate(50);
             navigation.navigate('NewGameScreen');
