@@ -1,128 +1,391 @@
 {
-    "turku": {
-        "rata1": {
-            "name": "Frantsin frisbeegolfrata",
-            "length": "6"
-        },
-        "rata2": {
-            "name": "Harjattula",
-            "length": "9"
-        },
-        "rata3": {
-            "name": "Lausteen frisbeegolfpuisto",
-            "length": "24"
-        },
-        "rata4": {
-            "name": "Luolavuoren frisbeegolfrata",
-            "length": "18"
-        },
-        "rata5": {
-            "name": "Maarian frisbeegolfrata",
-            "length": "9"
-        },
-        "rata6": {
-            "name": "Norssin frisbeegolfrata",
-            "length": "9"
-        },
-        "rata7": {
-            "name": "Pansio DiscGolfPark",
-            "length": "14"
-        },
-        "rata8": {
-            "name": "Suvituuli DiscGolfPark",
-            "length": "9"
-        },
-        "rata9": {
-            "name": "Urheilupuisto",
-            "length": "9"
-        },
-        "rata10": {
-            "name": "Vepsän frisbeegolfrata",
-            "length": "9"
-        },
-        "rata11": {
-            "name": "Vätin frisbeegolfrata",
-            "length": "6"
+    "locations": [
+        {"label": "Aura", "value": "aura"},
+        {"label": "Kaarina", "value": "kaarina"},
+        {"label": "Lieto", "value": "lieto"},
+        {"label": "Masku", "value": "masku"},
+        {"label": "Naantali", "value": "naantali"},
+        {"label": "Nousiainen", "value": "nousiainen"},
+        {"label": "Paimio", "value": "paimio"},
+        {"label": "Raisio", "value": "raisio"},
+        {"label": "Rusko", "value": "rusko"},
+        {"label": "Salo", "value": "salo"},
+        {"label": "Turku", "value": "turku"},
+        {"label": "Uusikaupunki", "value": "uusikaupunki"},
+        {"label": "Vehmaa", "value": "vehmaa"}
+    ],
+    "aura": [
+        {
+            "key": "1",
+            "name": "Auran frisbeegolfrata",
+            "length": "9",
+            "par": "27"
         }
-    },
-    "raisio": {
-        "rata1": {
-            "name": "Hauninen DiscGolfPark",
-            "length": "18"
-        },
-        "rata2": {
-            "name": "Kerttula DiscGolfPark",
-            "length": "10"
-        }
-    },
-    "lieto": {
-        "rata1": {
-            "name": "Ilmaristen frisbeegolfrata",
-            "length": "7"
-        },
-        "rata2": {
-            "name": "Liedon frisbeegolfrata",
-            "length": "18"
-        },
-        "rata3": {
-            "name": "Pahkamäen frisbeegolfrata",
-            "length": "6"
-        },
-        "rata4": {
-            "name": "Tarvasjoki DiscGolfPark",
-            "length": "9"
-        },
-        "rata5": {
-            "name": "Yliskulman frisbeegolfrata",
-            "length": "20"
-        }
-    },
-    "naantali": {
-        "rata1": {
-            "name": "Haijainen DiscGolfPark",
-            "length": "18"
-        },
-        "rata2": {
-            "name": "Iso Maisaari",
-            "length": "10"
-        },
-        "rata3": {
-            "name": "Kultaranta Resort",
-            "length": "5"
-        },
-        "rata4": {
-            "name": "Rymättylän koulun frisbeegolfrata",
-            "length": "5"
-        },
-        "rata5": {
-            "name": "Suopelto DiscGolfPark",
-            "length": "18"
-        }
-    },
-    "kaarina": {
-        "rata1": {
+    ],
+    "kaarina": [
+        {
+            "key": "1",
             "name": "Empon frisbeegolfrata",
-            "length": "4"
+            "length": "4",
+            "par": "12"
         },
-        "rata2": {
+        {
+            "key": "2",
             "name": "Harvaluodon frisbeegolfrata",
-            "length": "9"
+            "length": "9",
+            "par": "27"
         },
-        "rata3": {
+        {
+            "key": "3",
             "name": "Keskusliikuntapuisto",
-            "length": "12"
+            "length": "12",
+            "par": "39"
         },
-        "rata4": {
+        {
+            "key": "4",
             "name": "Nunnan frisbeegolfrata",
-            "length": "18"
+            "length": "18",
+            "par": "55"
         },
-        "rata5": {
+        {
+            "key": "5",
             "name": "Piikkiön koulukeskus",
-            "length": "5"
+            "length": "5",
+            "par": "15"
         },
-        "rata6": {
+        {
+            "key": "6",
             "name": "Toivonlinnan frisbeegolfrata",
-            "length": "18"
+            "length": "18",
+            "par": "55"
         }
-    }
+    ],
+    "lieto": [
+        {
+            "key": "1",
+            "name": "Ilmaristen frisbeegolfrata",
+            "length": "7",
+            "par": "21"
+        },
+        {
+            "key": "2",
+            "name": "Liedon frisbeegolfrata",
+            "length": "18",
+            "par": "55"
+        },
+        {
+            "key": "3",
+            "name": "Pahkamäen frisbeegolfrata",
+            "length": "6",
+            "par": "18"
+        },
+        {
+            "key": "4",
+            "name": "Tarvasjoki DiscGolfPark",
+            "length": "9",
+            "par": "27"
+        },
+        {
+            "key": "5",
+            "name": "Yliskulman frisbeegolfrata",
+            "length": "20",
+            "par": "70"
+        }
+    ],
+    "masku": [
+        {
+            "key": "1",
+            "name": "Askaisten koulun frisbeegolfrata",
+            "length": "5",
+            "par": "15"
+        },
+        {
+            "key": "2",
+            "name": "Masku frisbeegolf",
+            "length": "18",
+            "par": "60"
+        }
+    ],
+    "naantali": [
+        {
+            "key": "1",
+            "name": "Haijainen DiscGolfPark",
+            "length": "18",
+            "par": "59"
+        },
+        {
+            "key": "2",
+            "name": "Iso Maisaari",
+            "length": "10",
+            "par": "30"
+        },
+        {
+            "key": "3",
+            "name": "Kultaranta Resort",
+            "length": "5",
+            "par": "15"
+        },
+        {
+            "key": "4",
+            "name": "Rymättylän koulun frisbeegolfrata",
+            "length": "5",
+            "par": "15"
+        },
+        {
+            "key": "5",
+            "name": "Suopelto DiscGolfPark",
+            "length": "18",
+            "par": "55"
+        }
+    ],
+    "nousiainen": [
+        {
+            "key": "1",
+            "name": "Mikko Rantasen frisbeegolfrata",
+            "length": "18",
+            "par": "57"
+        },
+        {
+            "key": "2",
+            "name": "Valpperin frisbeegolfrata",
+            "length": "18",
+            "par": "59"
+        }
+    ],
+    "paimio": [
+        {
+            "key": "1",
+            "name": "Paimio DiscGolfPark",
+            "length": "18",
+            "par": "58"
+        },
+        {
+            "key": "2",
+            "name": "Paimio MultiGolfPark",
+            "length": "6",
+            "par": "18"
+        }
+    ],
+    "raisio": [
+        {
+            "key": "1",
+            "name": "Hauninen DiscGolfPark",
+            "length": "18",
+            "par": "55"
+        },
+        {
+            "key": "2",
+            "name": "Kerttula DiscGolfPark",
+            "length": "10",
+            "par": "30"
+        }
+    ],
+    "rusko": [
+        {
+            "key": "1",
+            "name": "Päällistönmäen frisbeegolfrata",
+            "length": "9",
+            "par": "28"
+        },
+        {
+            "key": "2",
+            "name": "Rusko MultiGolfPark",
+            "length": "6",
+            "par": "18"
+        },
+        {
+            "key": "3",
+            "name": "Vahdon frisbeegolfrata",
+            "length": "18",
+            "par": "57"
+        }
+    ],
+    "salo": [
+        {
+            "key": "1",
+            "name": "Hajalan frisbeegolfrata",
+            "length": "9",
+            "par": "27"
+        },
+        {
+            "key": "2",
+            "name": "Halikon frisbeegolfrata",
+            "length": "18",
+            "par": "58"
+        },
+        {
+            "key": "3",
+            "name": "Inkere",
+            "length": "18",
+            "par": "63"
+        },
+        {
+            "key": "4",
+            "name": "Kiikalan Leijonarata",
+            "length": "6",
+            "par": "18"
+        },
+        {
+            "key": "5",
+            "name": "Kuusjoen Vähäjärvi",
+            "length": "9",
+            "par": "31"
+        },
+        {
+            "key": "6",
+            "name": "Märynummen frisbeegolfrata",
+            "length": "18",
+            "par": "62"
+        },
+        {
+            "key": "7",
+            "name": "Pahkavuori",
+            "length": "12",
+            "par": "38"
+        },
+        {
+            "key": "8",
+            "name": "Perniö DiscGolfPark",
+            "length": "18",
+            "par": "67"
+        },
+        {
+            "key": "9",
+            "name": "Suomusjärvi DiscGolfPark",
+            "length": "12",
+            "par": "36"
+        },
+        {
+            "key": "10",
+            "name": "Tupurin frisbeegolfrata",
+            "length": "18",
+            "par": "60"
+        }
+    ],
+    "turku": [
+        {
+            "key": "1",
+            "name": "Frantsin frisbeegolfrata",
+            "length": "6",
+            "par": "18"
+        },
+        {
+            "key": "2",
+            "name": "Harjattula",
+            "length": "9",
+            "par": "27"
+        },
+        {
+            "key": "3",
+            "name": "Lausteen frisbeegolfpuisto",
+            "length": "24",
+            "par": "79"
+        },
+        {
+            "key": "4",
+            "name": "Luolavuoren frisbeegolfrata - Sininen",
+            "length": "18",
+            "par": "67"
+        },
+        {
+            "key": "5",
+            "name": "Luolavuoren frisbeegolfrata - Oranssi",
+            "length": "18",
+            "par": "53"
+        },
+        {
+            "key": "6",
+            "name": "Maarian frisbeegolfrata",
+            "length": "9",
+            "par": "27"
+        },
+        {
+            "key": "7",
+            "name": "Norssin frisbeegolfrata",
+            "length": "9",
+            "par": "27"
+        },
+        {
+            "key": "8",
+            "name": "Pansio DiscGolfPark",
+            "length": "14",
+            "par": "42"
+        },
+        {
+            "key": "9",
+            "name": "Suvituuli DiscGolfPark",
+            "length": "9",
+            "par": "27"
+        },
+        {
+            "key": "10",
+            "name": "Urheilupuisto",
+            "length": "9",
+            "par": "27"
+        },
+        {
+            "key": "11",
+            "name": "Vepsän frisbeegolfrata",
+            "length": "9",
+            "par": "27"
+        },
+        {
+            "key": "12",
+            "name": "Vätin frisbeegolfrata",
+            "length": "6",
+            "par": "18"
+        }
+    ],
+    "uusikaupunki": [
+        {
+            "key": "1",
+            "name": "Green Disc Golf",
+            "length": "21",
+            "par": "71"
+        },
+        {
+            "key": "2",
+            "name": "Kalannin frisbeegolfrata",
+            "length": "18",
+            "par": "56"
+        },
+        {
+            "key": "3",
+            "name": "Lokalahden frisbeegolfrata",
+            "length": "19",
+            "par": "59"
+        },
+        {
+            "key": "4",
+            "name": "Pyhämaa DiscGolfPark",
+            "length": "18",
+            "par": "57"
+        },
+        {
+            "key": "5",
+            "name": "SFC Rairanta frisbeegolfrata",
+            "length": "18",
+            "par": "54"
+        },
+        {
+            "key": "6",
+            "name": "Sorvakon frisbeegolfrata",
+            "length": "18",
+            "par": "56"
+        },
+        {
+            "key": "7",
+            "name": "Uimahallin frisbeegolfrata",
+            "length": "9",
+            "par": "27"
+        }
+    ],
+    "vehmaa": [
+        {
+            "key": "1",
+            "name": "Vehmaa DiscGolfPark",
+            "length": "18",
+            "par": "58"
+        }
+    ]
 }
