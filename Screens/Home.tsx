@@ -22,7 +22,7 @@ function HomeScreen({navigation}) {
           buttonColor={colors.fribaGreen}
           onPress={() => {
             Vibration.vibrate(50);
-            navigation.navigate('NewGameScreen');
+            navigation.navigate('SetupScreen');
           }}>
             New Game
         </Button>

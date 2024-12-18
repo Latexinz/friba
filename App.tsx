@@ -4,8 +4,9 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {IconButton} from 'react-native-paper';
 
+import GameScreen from "./Screens/Game";
 import HomeScreen from "./Screens/Home";
-import NewGameScreen from "./Screens/NewGame";
+import SetupScreen from "./Screens/Setup";
 import SettingsScreen from "./Screens/Settings";
 import { colors } from "./assets/styles";
 
@@ -37,13 +38,17 @@ export default function app() {
             }
           )}/>
         <Stack.Screen
-          name="NewGameScreen"
-          component={NewGameScreen}
+          name="SetupScreen"
+          component={SetupScreen}
           options={{title: 'Create New Game'}}/>
         <Stack.Screen
           name="SettingsScreen"
           component={SettingsScreen}
           options={{title: 'Settings'}}/>
+        <Stack.Screen
+          name="GameScreen"
+          component={GameScreen}
+          options={{title: 'Game'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
