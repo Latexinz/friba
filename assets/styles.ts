@@ -17,9 +17,25 @@ export const styles = StyleSheet.create({
         color:'black',
         fontSize: 18
     },
+    descriptionText: {
+        color:'black',
+        fontSize: 12
+    },
     option: {
         flexDirection:'row',
         paddingVertical:'3%',
+        justifyContent:'space-between',
+        alignItems:'center',
+    },
+    description: {
+        flexDirection:'row',
+        paddingBottom:'3%',
+        justifyContent:'space-between',
+        alignItems:'center',
+    },
+    checkbox: {
+        flexDirection:'row',
+        paddingTop:'3%',
         justifyContent:'space-between',
         alignItems:'center',
     },

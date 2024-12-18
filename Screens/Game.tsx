@@ -4,9 +4,10 @@ import {
   ScrollView,
   View,
   Text,
-  Vibration
+  Vibration,
+  Pressable
 } from "react-native";
-import { DataTable, IconButton } from "react-native-paper";
+import { DataTable, IconButton, Icon } from "react-native-paper";
 
 import { styles } from "../assets/styles";
 
@@ -51,30 +52,32 @@ function GameScreen({navigation, route}) {
                 <DataTable>
                     <DataTable.Header>
                         <DataTable.Title>Hole</DataTable.Title>
-                        <DataTable.Title>Score</DataTable.Title>
+                        <DataTable.Title style={{justifyContent: 'center'}}>Score</DataTable.Title>
                     </DataTable.Header>
 
                     {items.slice(from, to).map((item) => (
                         <DataTable.Row key={item.key}>
                         <DataTable.Cell>{item.key}</DataTable.Cell>
-                        <DataTable.Cell>
-                            <IconButton 
-                            icon='minus-circle'
-                            size={30} 
-                            onPress={() => {
+                        <DataTable.Cell style={{justifyContent: 'center', alignItems:'center'}} textStyle={{fontSize:40}}>
+                            <Pressable onPress={() => {
                                 if (item.score > 0) {
                                     updateScore(item.key, item.score-1);
+                                    Vibration.vibrate(50);
                                 };
-                                Vibration.vibrate(50);
-                            }}/>
+                            }}>
+                                <Icon 
+                                source='minus-circle'
+                                size={30}/>
+                           </Pressable>
                             {item.score}
-                            <IconButton 
-                            icon='plus-circle'
-                            size={30} 
-                            onPress={() => {
+                            <Pressable onPress={() => {
                                 updateScore(item.key, item.score+1);
                                 Vibration.vibrate(50);
-                            }}/>
+                            }}>
+                                <Icon 
+                                source='plus-circle'
+                                size={30}/>
+                            </Pressable>
                         </DataTable.Cell>
                         </DataTable.Row>
                     ))}
