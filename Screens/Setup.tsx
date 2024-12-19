@@ -16,6 +16,7 @@ import { Dropdown } from 'react-native-element-dropdown';
 import { styles, colors } from "../assets/styles";
 import * as courseData from '../assets/radat.json';
 
+
 function SetupScreen({navigation}) {
 
   const [value, setValue] = React.useState("turku"); //Default location
@@ -73,7 +74,7 @@ function SetupScreen({navigation}) {
               <DataTable.Title numeric>Par</DataTable.Title>
             </DataTable.Header>
 
-            {items.slice(from, to).map((item) => (
+            {items.slice(from, to).map((item: any) => (
               <DataTable.Row 
               key={item.key}
               onPress={() => {
@@ -141,7 +142,7 @@ function SetupScreen({navigation}) {
             disabled={ready}
             onPress={() => {
               Vibration.vibrate(50);
-              navigation.navigate('GameScreen', {params});
+              navigation.navigate('GameScreen', {params, max});
             }}>
               Start Game
           </Button>

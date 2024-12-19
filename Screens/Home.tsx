@@ -24,7 +24,7 @@ function HomeScreen({navigation}) {
             Vibration.vibrate(50);
             navigation.navigate('SetupScreen');
           }}>
-            New Game
+          New Game
         </Button>
       </View>
     </SafeAreaView>

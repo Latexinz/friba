@@ -40,7 +40,7 @@ export default function app() {
         <Stack.Screen
           name="SetupScreen"
           component={SetupScreen}
-          options={{title: 'Create New Game'}}/>
+          options={{title: 'New Game Setup'}}/>
         <Stack.Screen
           name="SettingsScreen"
           component={SettingsScreen}
@@ -48,7 +48,7 @@ export default function app() {
         <Stack.Screen
           name="GameScreen"
           component={GameScreen}
-          options={{title: 'Game'}}/>
+          options={{title: 'Game', headerBackVisible: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

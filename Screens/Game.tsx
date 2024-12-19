@@ -5,11 +5,17 @@ import {
   View,
   Text,
   Vibration,
-  Pressable
+  Pressable,
+  Alert
 } from "react-native";
-import { DataTable, IconButton, Icon } from "react-native-paper";
+import { 
+    DataTable, 
+    Icon, 
+    Button 
+} from "react-native-paper";
 
-import { styles } from "../assets/styles";
+import { colors, styles } from "../assets/styles";
+
 
 function GameScreen({navigation, route}) {
 
@@ -28,9 +34,9 @@ function GameScreen({navigation, route}) {
     setPage(0);
     }, [itemsPerPage]);
 
-    const updateScore = (key, score) => {
+    const updateScore = (key: string, score: number) => {
         setItems(
-          items.map((item) => {
+          items.map((item: any) => {
             if (item.key === key) {
               return { ...item, score };
             } else {
@@ -45,7 +51,7 @@ function GameScreen({navigation, route}) {
         <ScrollView style={styles.screen}>
             <View style={styles.option}>
                 <Text style={styles.settingText}>
-                    Total Score: {items.reduce((n, {score}) => n + score, 0)}
+                    Total Score: {items.reduce((n: number, {score}: any) => n + score, 0)}
                 </Text>
             </View>
             <View style={styles.option}>
@@ -55,7 +61,7 @@ function GameScreen({navigation, route}) {
                         <DataTable.Title style={{justifyContent: 'center'}}>Score</DataTable.Title>
                     </DataTable.Header>
 
-                    {items.slice(from, to).map((item) => (
+                    {items.slice(from, to).map((item: any) => (
                         <DataTable.Row key={item.key}>
                         <DataTable.Cell>{item.key}</DataTable.Cell>
                         <DataTable.Cell style={{justifyContent: 'center', alignItems:'center'}} textStyle={{fontSize:40}}>
@@ -67,15 +73,24 @@ function GameScreen({navigation, route}) {
                             }}>
                                 <Icon 
                                 source='minus-circle'
+                                color={colors.fribaGrey}
                                 size={30}/>
                            </Pressable>
                             {item.score}
                             <Pressable onPress={() => {
-                                updateScore(item.key, item.score+1);
-                                Vibration.vibrate(50);
+                                if (route.params["max"] === true) {
+                                    if (item.score < 10) {
+                                        updateScore(item.key, item.score+1);
+                                        Vibration.vibrate(50);
+                                    }
+                                } else {
+                                    updateScore(item.key, item.score+1);
+                                    Vibration.vibrate(50);
+                                }
                             }}>
                                 <Icon 
                                 source='plus-circle'
+                                color={colors.fribaGrey}
                                 size={30}/>
                             </Pressable>
                         </DataTable.Cell>
@@ -93,6 +108,29 @@ function GameScreen({navigation, route}) {
                         selectPageDropdownLabel={'Rows per page'}
                     />
                 </DataTable>
+            </View>
+            <View style={
+                {
+                paddingHorizontal:'25%',
+                }}>
+                <Button
+                    mode='contained'
+                    buttonColor={colors.fribaGreen}
+                    onPress={() => {
+                        Vibration.vibrate(50);
+                        Alert.alert('End game?', '', [
+                            {
+                                text: 'Yes',
+                                onPress: () => navigation.navigate('HomeScreen')
+                            },
+                            {
+                                text: 'No',
+                                style: 'cancel',
+                            }
+                        ]);
+                    }}>
+                    End Game
+              </Button>
             </View>
         </ScrollView>
       </SafeAreaView>

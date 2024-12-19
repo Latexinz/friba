@@ -11,6 +11,7 @@ import {
 
 import { styles } from "../assets/styles";
 
+
 function SettingsScreen({navigation}) {
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => ! previousState);
