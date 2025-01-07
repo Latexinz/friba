@@ -12,6 +12,7 @@ import { colors } from "./assets/styles";
 
 import {version} from "./package.json";
 
+
 const Stack = createNativeStackNavigator();
 
 export default function app() {
@@ -26,6 +27,7 @@ export default function app() {
           options={({navigation}) =>(
             {
               title: 'LÄTTYGOLF v' + version, 
+              headerBackVisible: false,
               headerRight: () => (
                 <IconButton 
                 icon='cog'
@@ -40,7 +42,20 @@ export default function app() {
         <Stack.Screen
           name="SetupScreen"
           component={SetupScreen}
-          options={{title: 'New Game Setup'}}/>
+          options={({navigation}) =>(
+            {
+              title: 'New Game Setup',
+              headerRight: () => (
+                <IconButton 
+                icon='cog'
+                size={20} 
+                onPress={() => {
+                  Vibration.vibrate(50);
+                  navigation.navigate('SettingsScreen')
+                }}/>
+              ),
+            }
+          )}/>
         <Stack.Screen
           name="SettingsScreen"
           component={SettingsScreen}
@@ -48,7 +63,21 @@ export default function app() {
         <Stack.Screen
           name="GameScreen"
           component={GameScreen}
-          options={{title: 'Game', headerBackVisible: false}}/>
+          options={({navigation}) =>(
+            {
+              title: 'Game', 
+              headerBackVisible: false,
+              headerRight: () => (
+                <IconButton 
+                icon='cog'
+                size={20} 
+                onPress={() => {
+                  Vibration.vibrate(50);
+                  navigation.navigate('SettingsScreen')
+                }}/>
+              ),
+            }
+          )}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

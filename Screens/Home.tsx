@@ -5,11 +5,15 @@ import {
   Vibration,
 } from "react-native";
 import { Button } from 'react-native-paper';
+import { usePreventRemove } from '@react-navigation/native';
 
 import { styles, colors } from "../assets/styles";
 
 
 function HomeScreen({navigation}) {
+
+  usePreventRemove(true, () => {});
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={

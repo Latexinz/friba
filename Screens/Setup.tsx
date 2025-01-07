@@ -39,6 +39,9 @@ function SetupScreen({navigation}) {
   const [ready, setReady] = React.useState(true);
 
   const [max, setMax] = React.useState(false);
+  const [time, setTime] = React.useState('');
+  const [name, setName] = React.useState('');
+  const [par, setPar] = React.useState('');
 
   return (
     <SafeAreaView style={styles.container}>
@@ -83,12 +86,28 @@ function SetupScreen({navigation}) {
                 let newParams = [];
                 for (let i = 0; i < parseInt(item.length); i++) {
                   let newItem = {
-                      "key": String(i+1),
+                      "hole": String(i+1),
                       "score": 0
                    };
                    newParams.push(newItem);
                 };
                 setParams(newParams);
+                setTime(
+                  new Date()
+                  .toLocaleString()
+                  .replaceAll('/', '-')
+                  .replace(', ', '_')
+                  .replaceAll(':', '-')
+                );
+                setName(
+                  JSON.stringify(item.name)
+                  .replaceAll('"', '')
+                  .replaceAll(' ', '_')
+                );
+                setPar(
+                  JSON.stringify(item.par)
+                  .replaceAll('"', '')
+                );
                 setReady(false);
               }}>
                 <DataTable.Cell>{item.name}</DataTable.Cell>
@@ -142,7 +161,7 @@ function SetupScreen({navigation}) {
             disabled={ready}
             onPress={() => {
               Vibration.vibrate(50);
-              navigation.navigate('GameScreen', {params, max});
+              navigation.navigate('GameScreen', {params, max, time, name, par});
             }}>
               Start Game
           </Button>
