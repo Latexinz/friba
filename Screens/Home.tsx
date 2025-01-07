@@ -18,8 +18,8 @@ function HomeScreen({navigation}) {
     <SafeAreaView style={styles.container}>
       <View style={
         {
-          paddingHorizontal:'25%',
-          paddingTop:'90%',
+          paddingHorizontal:'20%',
+          paddingTop:'80%',
         }}>
         <Button
           mode='contained'
@@ -29,6 +29,21 @@ function HomeScreen({navigation}) {
             navigation.navigate('SetupScreen');
           }}>
           New Game
+        </Button>
+      </View>
+      <View style={
+      {
+        paddingHorizontal:'20%',
+        paddingTop:'5%',
+      }}>
+        <Button
+          mode='contained'
+          buttonColor={colors.fribaGreen}
+          onPress={() => {
+            Vibration.vibrate(50);
+            navigation.navigate('ScoreScreen');
+          }}>
+          Scores
         </Button>
       </View>
     </SafeAreaView>

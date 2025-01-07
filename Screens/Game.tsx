@@ -140,11 +140,11 @@ function GameScreen({navigation, route}) {
                                         text: 'Yes',
                                         onPress: () => {
                                             RNFS.writeFile(
-                                                RNFS.DocumentDirectoryPath + '/' + name + '_' + route.params["time"] +'.txt',
+                                                RNFS.DownloadDirectoryPath + '/' + route.params["time"] + '_' + name +'.txt',
                                                 JSON.stringify(items),
                                                 'utf8')
                                             .then((success) => {
-                                                navigation.navigate('HomeScreen');
+                                                navigation.navigate('ScoreScreen');
                                             })
                                             .catch((error) => {
                                                 console.log(error.message);
@@ -172,6 +172,11 @@ function GameScreen({navigation, route}) {
                         }}>
                         End Game
                     </Button>
+                </View>
+                <View>
+                    <Text>
+                        {JSON.stringify(items)}
+                    </Text>
                 </View>
             </ScrollView>
         </SafeAreaView>

@@ -8,6 +8,7 @@ import GameScreen from "./Screens/Game";
 import HomeScreen from "./Screens/Home";
 import SetupScreen from "./Screens/Setup";
 import SettingsScreen from "./Screens/Settings";
+import ScoreScreen from "./Screens/Score";
 import { colors } from "./assets/styles";
 
 import {version} from "./package.json";
@@ -66,6 +67,24 @@ export default function app() {
           options={({navigation}) =>(
             {
               title: 'Game', 
+              headerBackVisible: false,
+              headerRight: () => (
+                <IconButton 
+                icon='cog'
+                size={20} 
+                onPress={() => {
+                  Vibration.vibrate(50);
+                  navigation.navigate('SettingsScreen')
+                }}/>
+              ),
+            }
+          )}/>
+          <Stack.Screen
+          name="ScoreScreen"
+          component={ScoreScreen}
+          options={({navigation}) =>(
+            {
+              title: 'Scores', 
               headerBackVisible: false,
               headerRight: () => (
                 <IconButton 
