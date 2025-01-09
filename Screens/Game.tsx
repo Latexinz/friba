@@ -37,7 +37,7 @@ function GameScreen({navigation, route}) {
     const to = Math.min((page + 1) * itemsPerPage, items.length);
 
     React.useEffect(() => {
-    setPage(0);
+        setPage(0);
     }, [itemsPerPage]);
 
     usePreventRemove(true, () => {});
