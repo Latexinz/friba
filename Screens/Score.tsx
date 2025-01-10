@@ -7,37 +7,53 @@ import {
 import { usePreventRemove } from '@react-navigation/native';
 import * as RNFS from '@dr.pogodin/react-native-fs';
 import { DataTable } from 'react-native-paper';
+import { Dropdown } from 'react-native-element-dropdown';
 
 import { styles } from "../assets/styles";
 
 
 function ScoreScreen({navigation}) {
 
+    const [saved, setSaved] = React.useState(false);
+
     const [items, setItems] = React.useState([]);
     const [lastGame, setLastGame] = React.useState('');
-    const [allGames, setAllGames] = React.useState(['']);
+    const [allGames, setAllGames] = React.useState([{'label': '', 'value': ''}]);
+
+    const [value, setValue] = React.useState(lastGame);
 
     React.useEffect(() => {
         const unsubscribe = navigation.addListener('focus', () => {
             RNFS.readDir(RNFS.DownloadDirectoryPath)
             .then((result) => {
-                let names = [];
-                for (const data of result) {
-                    names.push(data.name);
+                if (result.length > 0) {
+                    let names: String[] = [];
+                    let listNames = [];
+                    for (const data of result) {
+                        let newListItem = {
+                            'label': data.name
+                            .replace('.txt', '')
+                            .replaceAll('_', ' '),
+                            'value': data.name
+                        }
+                        names.push(data.name);
+                        listNames.push(newListItem);
+                    }
+                    setAllGames(listNames);
+                    setLastGame(
+                        JSON.stringify(names[names.length-1])
+                        .replaceAll('"', '')
+                        .replace('.txt', '')
+                        .replaceAll('_', ' ')
+                    );
+                    return RNFS.readFile(RNFS.DownloadDirectoryPath + '/' + JSON.stringify(names[names.length-1]).replaceAll('"', ''), 'utf8')
+                    .then((contents) => {
+                        setItems(JSON.parse(contents));
+                        setSaved(true);
+                    });
                 }
-                setAllGames(names);
-                setLastGame(
-                    JSON.stringify(names[names.length-1])
-                    .replaceAll('"', '')
-                    .replace('.txt', '')
-                    .replaceAll('_', ' ')
-                );
-                return RNFS.readFile(RNFS.DownloadDirectoryPath + '/' + JSON.stringify(names[names.length-1]).replaceAll('"', ''), 'utf8');
             })
-            .then((contents) => {
-                setItems(JSON.parse(contents));
             });
-        });
         return unsubscribe;
     }, [navigation]);
 
@@ -60,10 +76,32 @@ function ScoreScreen({navigation}) {
 
     return(
         <SafeAreaView style={styles.container}>
-            <View style={styles.screen}>
+            {saved ? <View style={styles.screen}>
+                <View style={styles.option}>
+                    <Dropdown
+                        style={styles.dropdownS}
+                        placeholderStyle={styles.settingText}
+                        itemTextStyle={styles.settingText}
+                        selectedTextStyle={styles.settingText}
+                        inputSearchStyle={styles.settingText}
+                        searchPlaceholder='search...'
+                        placeholder={lastGame}
+                        data={allGames}
+                        autoScroll={false}
+                        labelField='label'
+                        valueField='value'
+                        value={value}
+                        onChange={item => {
+                            RNFS.readFile(RNFS.DownloadDirectoryPath + '/' + item.value, 'utf8')
+                            .then((contents) => {
+                                setItems(JSON.parse(contents));
+                            });
+                            setValue(item.value);
+                        }}/>
+                </View>
                 <View style={styles.option}>
                     <Text style={styles.settingText}>
-                        {lastGame}
+                        Total Score: {items.reduce((n: number, {score}: any) => n + score, 0)}
                     </Text>
                 </View>
                 <View style={styles.option}>
@@ -93,6 +131,19 @@ function ScoreScreen({navigation}) {
                     </DataTable>
                 </View>
             </View>
+            : <View style={styles.screen}>
+                <View style={{paddingTop: '50%'}}>
+                    <Text style={{
+                        textAlign: 'center',
+                        color: 'black',
+                        fontSize: 40,
+                        }}>
+                        No saved scores found!
+                        {'\n\n'}
+                        Play a game from start to finish first :)
+                    </Text>
+                </View>
+            </View>}
         </SafeAreaView>
     );
 };
