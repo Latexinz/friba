@@ -6,15 +6,16 @@ import {
 } from "react-native";
 import { usePreventRemove } from '@react-navigation/native';
 import * as RNFS from '@dr.pogodin/react-native-fs';
-import { DataTable } from 'react-native-paper';
+import { DataTable, ActivityIndicator } from 'react-native-paper';
 import { Dropdown } from 'react-native-element-dropdown';
 
-import { styles } from "../assets/styles";
+import { styles, colors } from "../assets/styles";
 
 
 function ScoreScreen({navigation}) {
 
     const [saved, setSaved] = React.useState(false);
+    const [loading, setLoading] = React.useState(true);
 
     const [items, setItems] = React.useState([]);
     const [lastGame, setLastGame] = React.useState('');
@@ -50,7 +51,10 @@ function ScoreScreen({navigation}) {
                     .then((contents) => {
                         setItems(JSON.parse(contents));
                         setSaved(true);
+                        setLoading(false);
                     });
+                } else {
+                    setLoading(false);
                 }
             })
             });
@@ -76,7 +80,10 @@ function ScoreScreen({navigation}) {
 
     return(
         <SafeAreaView style={styles.container}>
-            {saved ? <View style={styles.screen}>
+            {loading ? <View style={{paddingVertical:'80%'}}>
+                <ActivityIndicator animating={loading} size={70} color={colors.fribaGreen}/>
+            </View>
+            : saved ? <View style={styles.screen}>
                 <View style={styles.option}>
                     <Dropdown
                         style={styles.dropdownS}
