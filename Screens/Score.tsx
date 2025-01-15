@@ -3,13 +3,14 @@ import {
   View,
   SafeAreaView,
   Text,
+  ScrollView
 } from "react-native";
 import { usePreventRemove } from '@react-navigation/native';
 import * as RNFS from '@dr.pogodin/react-native-fs';
 import { DataTable, ActivityIndicator } from 'react-native-paper';
 import { Dropdown } from 'react-native-element-dropdown';
 
-import { styles, colors } from "../assets/styles";
+import { styles, colors } from "../assets/Styles";
 
 
 function ScoreScreen({navigation}) {
@@ -83,7 +84,7 @@ function ScoreScreen({navigation}) {
             {loading ? <View style={{paddingVertical:'80%'}}>
                 <ActivityIndicator animating={loading} size={70} color={colors.fribaGreen}/>
             </View>
-            : saved ? <View style={styles.screen}>
+            : saved ? <ScrollView style={styles.screen}>
                 <View style={styles.option}>
                     <Dropdown
                         style={styles.dropdownS}
@@ -137,7 +138,7 @@ function ScoreScreen({navigation}) {
                         />
                     </DataTable>
                 </View>
-            </View>
+            </ScrollView>
             : <View style={styles.screen}>
                 <View style={{paddingTop: '50%'}}>
                     <Text style={{

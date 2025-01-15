@@ -9,7 +9,7 @@ import {
     Switch 
 } from 'react-native-paper';
 
-import { styles, colors } from "../assets/styles";
+import { styles, colors } from "../assets/Styles";
 
 
 function SettingsScreen({navigation}) {

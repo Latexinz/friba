@@ -13,7 +13,7 @@ import {
 } from 'react-native-paper';
 import { Dropdown } from 'react-native-element-dropdown';
 
-import { styles, colors } from "../assets/styles";
+import { styles, colors } from "../assets/Styles";
 import * as courseData from '../assets/radat.json';
 
 

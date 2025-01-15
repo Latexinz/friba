@@ -3,22 +3,61 @@ import {StatusBar, Vibration} from "react-native";
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {IconButton} from 'react-native-paper';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import GameScreen from "./Screens/Game";
 import HomeScreen from "./Screens/Home";
 import SetupScreen from "./Screens/Setup";
 import SettingsScreen from "./Screens/Settings";
 import ScoreScreen from "./Screens/Score";
-import { colors } from "./assets/styles";
+import { LoadingScreen } from "./assets/Loading";
+import { colors } from "./assets/Styles";
 
 import {version} from "./package.json";
 
 
 const Stack = createNativeStackNavigator();
 
+const PERSISTENCE_KEY = 'NAVIGATION_STATE_V1';
+
 export default function app() {
+
+  const [isReady, setIsReady] = React.useState(false);
+  const [initialState, setInitialState] = React.useState();
+
+  React.useEffect(() => {
+    const restoreState = async () => {
+      try {
+        const savedStateString = await AsyncStorage.getItem(PERSISTENCE_KEY);
+        const state = savedStateString
+          ? JSON.parse(savedStateString)
+          : undefined;
+
+        if (state !== undefined) {
+          setInitialState(state);
+        }
+      } finally {
+        setIsReady(true);
+      }
+    };
+
+    if (!isReady) {
+      restoreState();
+    }
+  }, [isReady]);
+
+  if (!isReady) {
+    return (
+      LoadingScreen()
+    );
+  }
+
   return(
-    <NavigationContainer>
+    <NavigationContainer
+      initialState={initialState}
+      onStateChange={(state) => 
+        AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(state))
+      }>
       <StatusBar
             backgroundColor={colors.fribaGreen}/>
       <Stack.Navigator initialRouteName="HomeScreen">

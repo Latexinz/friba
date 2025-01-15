@@ -7,7 +7,7 @@ import {
 import { Button } from 'react-native-paper';
 import { usePreventRemove } from '@react-navigation/native';
 
-import { styles, colors } from "../assets/styles";
+import { styles, colors } from "../assets/Styles";
 
 
 function HomeScreen({navigation}) {

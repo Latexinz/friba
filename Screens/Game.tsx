@@ -15,11 +15,16 @@ import {
 } from "react-native-paper";
 import { usePreventRemove } from '@react-navigation/native';
 import * as RNFS from '@dr.pogodin/react-native-fs';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import { colors, styles } from "../assets/styles";
+import { colors, styles } from "../assets/Styles";
 
+
+const PERSISTENCE_KEY = 'GAME_IN_PROGRESS';
 
 function GameScreen({navigation, route}) {
+
+    const [isReady, setIsReady] = React.useState(false);
 
     const [isValid, setIsValid] = React.useState(false);
 
@@ -44,15 +49,36 @@ function GameScreen({navigation, route}) {
 
     const updateScore = (hole: string, score: number) => {
         setItems(
-          items.map((item: any) => {
-            if (item.hole === hole) {
-              return { ...item, score };
-            } else {
-              return item;
-            }
-          })
+            items.map((item: any) => {
+                if (item.hole === hole) {
+                    return { ...item, score };
+                } else {
+                    return item;
+                }
+            })
         );
-      };
+    };
+
+    React.useEffect(() => {
+        const restoreState = async () => {
+          try {
+            const savedStateString = await AsyncStorage.getItem(PERSISTENCE_KEY);
+            const state = savedStateString
+              ? JSON.parse(savedStateString)
+              : undefined;
+    
+            if (state !== undefined) {
+              setItems(state);
+            }
+          } finally {
+            setIsReady(true);
+          }
+        };
+    
+        if (!isReady) {
+          restoreState();
+        }
+      }, [isReady]);
 
     return (
         <SafeAreaView style={styles.container}>
@@ -83,6 +109,7 @@ function GameScreen({navigation, route}) {
                                 }}
                                 onPressOut={() => {
                                     setIsValid(items.every(item => item.score > 0));
+                                    AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(items));
                                 }}>
                                     <Icon 
                                     source='minus-circle'
@@ -103,6 +130,7 @@ function GameScreen({navigation, route}) {
                                 }}
                                 onPressOut={() => {
                                     setIsValid(items.every(item => item.score > 0));
+                                    AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(items));
                                 }}>
                                     <Icon 
                                     source='plus-circle'
@@ -144,6 +172,7 @@ function GameScreen({navigation, route}) {
                                                 JSON.stringify(items),
                                                 'utf8')
                                             .then((success) => {
+                                                AsyncStorage.removeItem(PERSISTENCE_KEY)
                                                 navigation.navigate('ScoreScreen');
                                             })
                                             .catch((error) => {
@@ -160,7 +189,10 @@ function GameScreen({navigation, route}) {
                                 Alert.alert('All scores not set!', 'End game prematurely?', [
                                     {
                                         text: 'Yes',
-                                        onPress: () => navigation.navigate('HomeScreen')
+                                        onPress: () => {
+                                            AsyncStorage.removeItem(PERSISTENCE_KEY)
+                                            navigation.navigate('HomeScreen')
+                                        }
                                     },
                                     {
                                         text: 'Cancel',
@@ -172,11 +204,6 @@ function GameScreen({navigation, route}) {
                         }}>
                         End Game
                     </Button>
-                </View>
-                <View>
-                    <Text>
-                        {JSON.stringify(items)}
-                    </Text>
                 </View>
             </ScrollView>
         </SafeAreaView>
