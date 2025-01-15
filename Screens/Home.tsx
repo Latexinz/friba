@@ -2,11 +2,11 @@ import React from "react";
 import { 
   View,
   SafeAreaView,
-  Vibration,
 } from "react-native";
 import { Button } from 'react-native-paper';
 import { usePreventRemove } from '@react-navigation/native';
 
+import { HapticFeedback } from "../assets/Settings";
 import { styles, colors } from "../assets/Styles";
 
 
@@ -25,7 +25,7 @@ function HomeScreen({navigation}) {
           mode='contained'
           buttonColor={colors.fribaGreen}
           onPress={() => {
-            Vibration.vibrate(50);
+            HapticFeedback();
             navigation.navigate('SetupScreen');
           }}>
           New Game
@@ -40,7 +40,7 @@ function HomeScreen({navigation}) {
           mode='contained'
           buttonColor={colors.fribaGreen}
           onPress={() => {
-            Vibration.vibrate(50);
+            HapticFeedback();
             navigation.navigate('ScoreScreen');
           }}>
           Scores

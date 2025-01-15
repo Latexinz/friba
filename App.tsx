@@ -1,8 +1,8 @@
 import React from "react";
-import {StatusBar, Vibration} from "react-native";
+import {StatusBar, View} from "react-native";
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {IconButton} from 'react-native-paper';
+import {IconButton, ActivityIndicator} from 'react-native-paper';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import GameScreen from "./Screens/Game";
@@ -10,7 +10,7 @@ import HomeScreen from "./Screens/Home";
 import SetupScreen from "./Screens/Setup";
 import SettingsScreen from "./Screens/Settings";
 import ScoreScreen from "./Screens/Score";
-import { LoadingScreen } from "./assets/Loading";
+import { HapticFeedback } from "./assets/Settings";
 import { colors } from "./assets/Styles";
 
 import {version} from "./package.json";
@@ -48,7 +48,9 @@ export default function app() {
 
   if (!isReady) {
     return (
-      LoadingScreen()
+      <View style={{paddingVertical:'100%'}}>
+        <ActivityIndicator size={70} color={colors.fribaGreen}/>
+      </View>
     );
   }
 
@@ -72,8 +74,8 @@ export default function app() {
                 <IconButton 
                 icon='cog'
                 size={20} 
-                onPress={() => {
-                  Vibration.vibrate(50);
+                onPressIn={() => {
+                  HapticFeedback();
                   navigation.navigate('SettingsScreen')
                 }}/>
               ),
@@ -89,8 +91,8 @@ export default function app() {
                 <IconButton 
                 icon='cog'
                 size={20} 
-                onPress={() => {
-                  Vibration.vibrate(50);
+                onPressIn={() => {
+                  HapticFeedback();
                   navigation.navigate('SettingsScreen')
                 }}/>
               ),
@@ -111,8 +113,8 @@ export default function app() {
                 <IconButton 
                 icon='cog'
                 size={20} 
-                onPress={() => {
-                  Vibration.vibrate(50);
+                onPressIn={() => {
+                  HapticFeedback();
                   navigation.navigate('SettingsScreen')
                 }}/>
               ),
@@ -129,8 +131,8 @@ export default function app() {
                 <IconButton 
                 icon='cog'
                 size={20} 
-                onPress={() => {
-                  Vibration.vibrate(50);
+                onPressIn={() => {
+                  HapticFeedback();
                   navigation.navigate('SettingsScreen')
                 }}/>
               ),

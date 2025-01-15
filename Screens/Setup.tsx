@@ -3,7 +3,6 @@ import {
   View,
   SafeAreaView,
   Text,
-  Vibration,
 } from "react-native";
 import { 
   Divider, 
@@ -13,6 +12,7 @@ import {
 } from 'react-native-paper';
 import { Dropdown } from 'react-native-element-dropdown';
 
+import { HapticFeedback } from "../assets/Settings";
 import { styles, colors } from "../assets/Styles";
 import * as courseData from '../assets/radat.json';
 
@@ -81,7 +81,7 @@ function SetupScreen({navigation}) {
               <DataTable.Row 
               key={item.key}
               onPress={() => {
-                Vibration.vibrate(50);
+                HapticFeedback();
                 setCourse(item);
                 let newParams = [];
                 for (let i = 0; i < parseInt(item.length); i++) {
@@ -137,6 +137,7 @@ function SetupScreen({navigation}) {
             status={max ? 'checked' : 'unchecked'}
             color={colors.fribaGreen}
             onPress={() => {
+              HapticFeedback();
               setMax(!max);
           }}/>
         </View>
@@ -160,7 +161,7 @@ function SetupScreen({navigation}) {
             buttonColor={colors.fribaGreen}
             disabled={ready}
             onPress={() => {
-              Vibration.vibrate(50);
+              HapticFeedback();
               navigation.navigate('GameScreen', {params, max, time, name, par});
             }}>
               Start Game

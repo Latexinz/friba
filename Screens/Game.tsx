@@ -4,19 +4,20 @@ import {
   ScrollView,
   View,
   Text,
-  Vibration,
   Pressable,
   Alert,
 } from "react-native";
 import { 
     DataTable, 
     Icon, 
-    Button 
+    Button,
+    ActivityIndicator 
 } from "react-native-paper";
 import { usePreventRemove } from '@react-navigation/native';
 import * as RNFS from '@dr.pogodin/react-native-fs';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+import { HapticFeedback } from "../assets/Settings";
 import { colors, styles } from "../assets/Styles";
 
 
@@ -61,24 +62,32 @@ function GameScreen({navigation, route}) {
 
     React.useEffect(() => {
         const restoreState = async () => {
-          try {
-            const savedStateString = await AsyncStorage.getItem(PERSISTENCE_KEY);
-            const state = savedStateString
-              ? JSON.parse(savedStateString)
-              : undefined;
-    
-            if (state !== undefined) {
-              setItems(state);
+            try {
+                const savedStateString = await AsyncStorage.getItem(PERSISTENCE_KEY);
+                const state = savedStateString
+                ? JSON.parse(savedStateString)
+                : undefined;
+        
+                if (state !== undefined) {
+                    setItems(state);
+                }
+            } finally {
+                setIsReady(true);
             }
-          } finally {
-            setIsReady(true);
-          }
         };
-    
+        
         if (!isReady) {
-          restoreState();
+            restoreState();
         }
-      }, [isReady]);
+    }, [isReady]);
+
+    if (!isReady) {
+        return (
+            <View style={{paddingVertical:'100%'}}>
+                <ActivityIndicator size={70} color={colors.fribaGreen}/>
+            </View>
+        );
+      }
 
     return (
         <SafeAreaView style={styles.container}>
@@ -104,7 +113,7 @@ function GameScreen({navigation, route}) {
                                 <Pressable onPressIn={() => {
                                     if (item.score > 0) {
                                         updateScore(item.hole, item.score-1);
-                                        Vibration.vibrate(50);
+                                        HapticFeedback();
                                     };
                                 }}
                                 onPressOut={() => {
@@ -121,11 +130,11 @@ function GameScreen({navigation, route}) {
                                     if (route.params["max"] === true) {
                                         if (item.score < 10) {
                                             updateScore(item.hole, item.score+1);
-                                            Vibration.vibrate(50);
+                                            HapticFeedback();
                                         }
                                     } else {
                                         updateScore(item.hole, item.score+1);
-                                        Vibration.vibrate(50);
+                                        HapticFeedback();
                                     }
                                 }}
                                 onPressOut={() => {
@@ -161,7 +170,7 @@ function GameScreen({navigation, route}) {
                         mode='contained'
                         buttonColor={colors.fribaGreen}
                         onPress={() => {
-                            Vibration.vibrate(50);
+                            HapticFeedback();
                             if (isValid) {
                                 Alert.alert('End game?', 'Score will be saved', [
                                     {

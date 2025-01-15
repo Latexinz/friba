@@ -2,20 +2,19 @@ import React, { useState } from "react";
 import { 
   View,
   SafeAreaView,
+  Alert
 } from "react-native";
 import { 
     Divider,
-    Text, 
-    Switch 
+    Text,
+    Button 
 } from 'react-native-paper';
 
+import { HapticFeedback } from "../assets/Settings";
 import { styles, colors } from "../assets/Styles";
 
 
 function SettingsScreen({navigation}) {
-
-  const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => ! previousState);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -26,14 +25,27 @@ function SettingsScreen({navigation}) {
           <Divider bold/>
           <View style={styles.option}>
             <Text style={styles.settingText}>
-              Haptic feedback
+              Delete saved data
             </Text>
-            <Switch
-            onValueChange={() => {
-              toggleSwitch;
-            }}
-            value={isEnabled}
-            color={colors.fribaGreen}/>
+            <Button
+              mode='contained'
+              buttonColor={colors.fribaGreen}
+              onPress={() => {
+                HapticFeedback();
+                Alert.alert('Delete data?', 'All saved data will be removed', [
+                  {
+                      text: 'Yes',
+                      onPress: () => {
+                      }
+                  },
+                  {
+                      text: 'Cancel',
+                      style: 'cancel',
+                  }
+              ]);
+            }}>
+              Delete
+            </Button>
           </View>
           <View style={styles.option}>
             <Text style={styles.option}>

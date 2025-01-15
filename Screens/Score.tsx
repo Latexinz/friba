@@ -71,9 +71,9 @@ function ScoreScreen({navigation}) {
     const from = page * itemsPerPage;
     const to = Math.min((page + 1) * itemsPerPage, items.length);
 
-  React.useEffect(() => {
-    setPage(0);
-  }, [itemsPerPage]);
+    React.useEffect(() => {
+        setPage(0);
+    }, [itemsPerPage]);
 
     usePreventRemove(true, () => {
         navigation.navigate('HomeScreen');
