@@ -70,6 +70,7 @@ function GameScreen({navigation, route}) {
         
                 if (state !== undefined) {
                     setItems(state);
+                    setIsValid(state.every(item => item.score > 0));
                 }
             } finally {
                 setIsReady(true);
