@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {IconButton, ActivityIndicator} from 'react-native-paper';
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import * as RNFS from '@dr.pogodin/react-native-fs';
 
 import GameScreen from "./Screens/Game";
 import HomeScreen from "./Screens/Home";
@@ -26,6 +27,15 @@ export default function app() {
   const [initialState, setInitialState] = React.useState();
 
   React.useEffect(() => {
+    //Check if dir for saved games exists
+    const initDir = async () => {
+      const exists = await RNFS.exists(RNFS.DownloadDirectoryPath + '/friba');
+      if (!exists) {
+        RNFS.mkdir(RNFS.DownloadDirectoryPath + '/friba');
+      }
+    };
+
+    //Restore app state if closed and opened again
     const restoreState = async () => {
       try {
         const savedStateString = await AsyncStorage.getItem(PERSISTENCE_KEY);
@@ -42,10 +52,12 @@ export default function app() {
     };
 
     if (!isReady) {
+      initDir();
       restoreState();
     }
   }, [isReady]);
 
+  //Display an activity indicator while restoring state
   if (!isReady) {
     return (
       <View style={{paddingVertical:'100%'}}>

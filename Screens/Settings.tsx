@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { 
   View,
   SafeAreaView,
@@ -9,6 +9,7 @@ import {
     Text,
     Button 
 } from 'react-native-paper';
+import * as RNFS from '@dr.pogodin/react-native-fs';
 
 import { HapticFeedback } from "../assets/Settings";
 import { styles, colors } from "../assets/Styles";
@@ -29,13 +30,17 @@ function SettingsScreen({navigation}) {
             </Text>
             <Button
               mode='contained'
-              buttonColor={colors.fribaGreen}
+              buttonColor={colors.fribaRed}
               onPress={() => {
                 HapticFeedback();
                 Alert.alert('Delete data?', 'All saved data will be removed', [
                   {
                       text: 'Yes',
                       onPress: () => {
+                        RNFS.unlink(RNFS.DownloadDirectoryPath + '/friba/')
+                        .then(() => {
+                          RNFS.mkdir(RNFS.DownloadDirectoryPath + '/friba/')
+                        });
                       }
                   },
                   {
@@ -46,11 +51,6 @@ function SettingsScreen({navigation}) {
             }}>
               Delete
             </Button>
-          </View>
-          <View style={styles.option}>
-            <Text style={styles.option}>
-              Test
-            </Text>
           </View>
           <Text style={styles.categoryText}>
             Account Settings

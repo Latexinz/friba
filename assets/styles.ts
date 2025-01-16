@@ -60,5 +60,6 @@ export const styles = StyleSheet.create({
 
 export const colors = {
     fribaGreen: '#449e48',
-    fribaGrey: '#8c9096'
+    fribaGrey: '#8c9096',
+    fribaRed: '#d2042d'
 }

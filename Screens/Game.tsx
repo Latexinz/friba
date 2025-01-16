@@ -60,6 +60,7 @@ function GameScreen({navigation, route}) {
         );
     };
 
+    //Remembers scores if app was closed mid game
     React.useEffect(() => {
         const restoreState = async () => {
             try {
@@ -82,6 +83,7 @@ function GameScreen({navigation, route}) {
         }
     }, [isReady]);
 
+    //Activity indicator while restoring state
     if (!isReady) {
         return (
             <View style={{paddingVertical:'100%'}}>
@@ -97,7 +99,7 @@ function GameScreen({navigation, route}) {
                     <Text style={styles.settingText}>
                         {name.replaceAll('_', ' ') + '\n'}
                         Par: {par + '\n'}
-                        Total Score: {items.reduce((n: number, {score}: any) => n + score, 0)}
+                        Score: {items.reduce((n: number, {score}: any) => n + score, 0)}
                     </Text>
                 </View>
                 <View style={styles.option}>
@@ -169,7 +171,7 @@ function GameScreen({navigation, route}) {
                     }}>
                     <Button
                         mode='contained'
-                        buttonColor={colors.fribaGreen}
+                        buttonColor={colors.fribaRed}
                         onPress={() => {
                             HapticFeedback();
                             if (isValid) {
@@ -178,7 +180,7 @@ function GameScreen({navigation, route}) {
                                         text: 'Yes',
                                         onPress: () => {
                                             RNFS.writeFile(
-                                                RNFS.DownloadDirectoryPath + '/' + route.params["time"] + '_' + name +'.txt',
+                                                RNFS.DownloadDirectoryPath + '/friba/' + route.params["time"] + '_' + name +'.txt',
                                                 JSON.stringify(items),
                                                 'utf8')
                                             .then((success) => {
@@ -186,7 +188,7 @@ function GameScreen({navigation, route}) {
                                                 navigation.navigate('ScoreScreen');
                                             })
                                             .catch((error) => {
-                                                console.log(error.message);
+                                                //console.log(error.message);
                                             });
                                         }
                                     },

@@ -24,9 +24,10 @@ function ScoreScreen({navigation}) {
 
     const [value, setValue] = React.useState(lastGame);
 
+    //Finds all saved games when opening the screen
     React.useEffect(() => {
         const unsubscribe = navigation.addListener('focus', () => {
-            RNFS.readDir(RNFS.DownloadDirectoryPath)
+            RNFS.readDir(RNFS.DownloadDirectoryPath + '/friba')
             .then((result) => {
                 if (result.length > 0) {
                     let names: String[] = [];
@@ -48,7 +49,7 @@ function ScoreScreen({navigation}) {
                         .replace('.txt', '')
                         .replaceAll('_', ' ')
                     );
-                    return RNFS.readFile(RNFS.DownloadDirectoryPath + '/' + JSON.stringify(names[names.length-1]).replaceAll('"', ''), 'utf8')
+                    return RNFS.readFile(RNFS.DownloadDirectoryPath + '/friba/' + JSON.stringify(names[names.length-1]).replaceAll('"', ''), 'utf8')
                     .then((contents) => {
                         setItems(JSON.parse(contents));
                         setSaved(true);
@@ -75,6 +76,7 @@ function ScoreScreen({navigation}) {
         setPage(0);
     }, [itemsPerPage]);
 
+    //Hardware backbutton always takes user back to homescreen
     usePreventRemove(true, () => {
         navigation.navigate('HomeScreen');
     });
@@ -109,7 +111,7 @@ function ScoreScreen({navigation}) {
                 </View>
                 <View style={styles.option}>
                     <Text style={styles.settingText}>
-                        Total Score: {items.reduce((n: number, {score}: any) => n + score, 0)}
+                        Score: {items.reduce((n: number, {score}: any) => n + score, 0)}
                     </Text>
                 </View>
                 <View style={styles.option}>
