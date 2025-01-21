@@ -1,10 +1,15 @@
 import React from "react";
-import {StatusBar, View} from "react-native";
+import {Alert, StatusBar, View} from "react-native";
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {IconButton, ActivityIndicator} from 'react-native-paper';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as RNFS from '@dr.pogodin/react-native-fs';
+import {
+  GoogleSignin, 
+  statusCodes, 
+  isErrorWithCode 
+} from "@react-native-google-signin/google-signin";
 
 import GameScreen from "./Screens/Game";
 import HomeScreen from "./Screens/Home";
@@ -20,6 +25,7 @@ import {version} from "./package.json";
 const Stack = createNativeStackNavigator();
 
 const PERSISTENCE_KEY = 'NAVIGATION_STATE_V1';
+const USER_KEY = 'USER_STATE';
 
 export default function app() {
 
@@ -30,7 +36,7 @@ export default function app() {
     //Check if dir for saved games exists
     const initDir = async () => {
       const exists = await RNFS.exists(RNFS.DownloadDirectoryPath + '/friba');
-      if (!exists) {
+      if (!exists) { 
         RNFS.mkdir(RNFS.DownloadDirectoryPath + '/friba');
       }
     };
@@ -43,7 +49,7 @@ export default function app() {
           ? JSON.parse(savedStateString)
           : undefined;
 
-        if (state !== undefined) {
+        if (state !== undefined) { //Previous state found
           setInitialState(state);
         }
       } finally {
@@ -51,8 +57,56 @@ export default function app() {
       }
     };
 
+    const user = async () => {
+      const savedString = await AsyncStorage.getItem(USER_KEY);
+      const savedUser = savedString
+        ? JSON.parse(savedString)
+        : undefined;
+
+      if (savedUser !== undefined) {
+        signIn();
+      }
+    };
+
+    //Check for google signin
+    const signIn = async () => {
+      try {
+        await GoogleSignin.hasPlayServices();
+        const previousSignIn = GoogleSignin.hasPreviousSignIn();
+        if (previousSignIn) { //If previous signin found, check for user
+          const user = GoogleSignin.getCurrentUser();
+          if (user === null) { //Recover user if not found
+            GoogleSignin.configure();
+            const responseSilent = await GoogleSignin.signInSilently();
+            if (responseSilent.type === 'success') {
+              AsyncStorage.setItem(USER_KEY, JSON.stringify(responseSilent.data.user.email));
+            } else if (responseSilent.type === 'noSavedCredentialFound') { //Prompt user here
+              const responseLoud = await GoogleSignin.signIn();
+              if (responseLoud.type === 'success') {
+                AsyncStorage.setItem(USER_KEY, JSON.stringify(responseLoud.data.user.email));
+              } else { //Remove user from store
+                AsyncStorage.removeItem(USER_KEY);
+              }
+            }
+          }
+        }
+      } catch (error) { //Error handling
+        if (isErrorWithCode(error)) {
+          switch (error.code) {
+            case statusCodes.PLAY_SERVICES_NOT_AVAILABLE:
+              Alert.alert('Error signing in', 'Play services not available or outdated');
+              break;
+            default:
+              Alert.alert('Error signing in', 'Unknown error');
+              break;
+          }
+        }
+      }
+    };
+
     if (!isReady) {
       initDir();
+      user();
       restoreState();
     }
   }, [isReady]);

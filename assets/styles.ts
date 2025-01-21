@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     },
     option: {
         flexDirection:'row',
-        paddingVertical:'3%',
+        paddingTop:'3%',
         justifyContent:'space-between',
         alignItems:'center',
     },
