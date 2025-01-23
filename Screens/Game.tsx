@@ -16,18 +16,25 @@ import {
 import { usePreventRemove } from '@react-navigation/native';
 import * as RNFS from '@dr.pogodin/react-native-fs';
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import base64 from 'react-native-base64';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import { GDrive, APP_DATA_FOLDER_ID } from '@robinbobin/react-native-google-drive-api-wrapper';
 
 import { HapticFeedback } from "../assets/Settings";
 import { colors, styles } from "../assets/Styles";
 
 
-const PERSISTENCE_KEY = 'GAME_IN_PROGRESS';
+const IN_PROGRESS_KEY = 'GAME_IN_PROGRESS';
+const USER_KEY = 'USER_STATE';
 
 function GameScreen({navigation, route}) {
 
     const [isReady, setIsReady] = React.useState(false);
 
     const [isValid, setIsValid] = React.useState(false);
+
+    const gdrive = new GDrive();
+    const [useDrive, setUseDrive] = React.useState(false);
 
     const [items, setItems] = React.useState(route.params["params"]);
     const name: string = route.params["name"];
@@ -60,18 +67,37 @@ function GameScreen({navigation, route}) {
         );
     };
 
+    //If screen out of focus fe going to settings and coming back
+    //check states again
+    React.useEffect(() => {
+        const unsubscribe = navigation.addListener('focus', () => {
+            setIsReady(false);
+        });
+        return unsubscribe;
+    }, [navigation]);
+
     //Remembers scores if app was closed mid game
+    //also checks if user logged in to Google
     React.useEffect(() => {
         const restoreState = async () => {
             try {
-                const savedStateString = await AsyncStorage.getItem(PERSISTENCE_KEY);
-                const state = savedStateString
-                ? JSON.parse(savedStateString)
+                const savedStateString = await AsyncStorage.multiGet([IN_PROGRESS_KEY, USER_KEY]);
+                //multiGet returns a nested array with key as index 0 and value as index 1
+                const state = savedStateString[0][1]
+                ? JSON.parse(savedStateString[0][1])
+                : undefined;
+                const user = savedStateString[1][1]
+                ? JSON.parse(savedStateString[1][1])
                 : undefined;
         
                 if (state !== undefined) {
                     setItems(state);
                     setIsValid(state.every(item => item.score > 0));
+                }
+                if (user !== undefined) {
+                    setUseDrive(true);
+                } else {
+                    setUseDrive(false);
                 }
             } finally {
                 setIsReady(true);
@@ -121,7 +147,7 @@ function GameScreen({navigation, route}) {
                                 }}
                                 onPressOut={() => {
                                     setIsValid(items.every(item => item.score > 0));
-                                    AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(items));
+                                    AsyncStorage.setItem(IN_PROGRESS_KEY, JSON.stringify(items));
                                 }}>
                                     <Icon 
                                     source='minus-circle'
@@ -142,7 +168,7 @@ function GameScreen({navigation, route}) {
                                 }}
                                 onPressOut={() => {
                                     setIsValid(items.every(item => item.score > 0));
-                                    AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(items));
+                                    AsyncStorage.setItem(IN_PROGRESS_KEY, JSON.stringify(items));
                                 }}>
                                     <Icon 
                                     source='plus-circle'
@@ -178,18 +204,36 @@ function GameScreen({navigation, route}) {
                                 Alert.alert('End game?', 'Score will be saved', [
                                     {
                                         text: 'Yes',
-                                        onPress: () => {
-                                            RNFS.writeFile(
-                                                RNFS.DownloadDirectoryPath + '/friba/' + route.params["time"] + '_' + name +'.txt',
-                                                JSON.stringify(items),
-                                                'utf8')
-                                            .then((success) => {
-                                                AsyncStorage.removeItem(PERSISTENCE_KEY)
-                                                navigation.navigate('ScoreScreen');
-                                            })
-                                            .catch((error) => {
-                                                //console.log(error.message);
-                                            });
+                                        onPress: async () => {
+                                            if (useDrive) { //Save to Drive
+                                                try {
+                                                    gdrive.accessToken = (await GoogleSignin.getTokens()).accessToken;
+                                                    gdrive.fetchTimeout = 3000;
+                                                    const upload = gdrive.files.newMultipartUploader()
+                                                    .setData(base64.encode(JSON.stringify(items)))
+                                                    .setRequestBody({
+                                                        name: route.params["time"] + '_' + name +'.json',
+                                                        parents: [APP_DATA_FOLDER_ID]
+                                                    }).execute();
+
+                                                    return upload;
+                                                } catch (error) {
+                                                    Alert.alert('Error Uploading to Drive');
+                                                } finally {
+                                                    //Save to device
+                                                    RNFS.writeFile(
+                                                        RNFS.DownloadDirectoryPath + '/friba/' + route.params["time"] + '_' + name +'.json',
+                                                        JSON.stringify(items),
+                                                        'utf8')
+                                                    .then((success) => {
+                                                        AsyncStorage.removeItem(IN_PROGRESS_KEY);
+                                                        navigation.navigate('ScoreScreen');
+                                                    })
+                                                    .catch((error) => {
+                                                        //console.log(error.message);
+                                                    });
+                                                }
+                                            }
                                         }
                                     },
                                     {
@@ -202,7 +246,7 @@ function GameScreen({navigation, route}) {
                                     {
                                         text: 'Yes',
                                         onPress: () => {
-                                            AsyncStorage.removeItem(PERSISTENCE_KEY)
+                                            AsyncStorage.removeItem(IN_PROGRESS_KEY)
                                             navigation.navigate('HomeScreen')
                                         }
                                     },

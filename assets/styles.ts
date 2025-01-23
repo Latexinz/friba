@@ -11,8 +11,9 @@ export const styles = StyleSheet.create({
         paddingVertical:'5%',
     },
     categoryText: {
-    color:'gray',
-        fontSize: 24
+        color:'#8c9096',
+        fontSize: 24,
+        paddingTop: '2%'
     },
     settingText: {
         color:'black',

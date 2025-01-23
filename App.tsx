@@ -76,7 +76,14 @@ export default function app() {
         if (previousSignIn) { //If previous signin found, check for user
           const user = GoogleSignin.getCurrentUser();
           if (user === null) { //Recover user if not found
-            GoogleSignin.configure();
+            GoogleSignin.configure({
+              scopes: [
+                'https://www.googleapis.com/auth/userinfo.email',
+                'https://www.googleapis.com/auth/userinfo.profile',
+                'https://www.googleapis.com/auth/drive.file',
+                'https://www.googleapis.com/auth/drive.appdata'
+              ]
+            });
             const responseSilent = await GoogleSignin.signInSilently();
             if (responseSilent.type === 'success') {
               AsyncStorage.setItem(USER_KEY, JSON.stringify(responseSilent.data.user.email));
@@ -167,7 +174,20 @@ export default function app() {
         <Stack.Screen
           name="SettingsScreen"
           component={SettingsScreen}
-          options={{title: 'Settings'}}/>
+          options={({navigation}) =>(
+            {
+              title: 'Settings',
+              headerLeft: () => (
+                <IconButton 
+                icon='arrow-left-bold'
+                size={20} 
+                onPressIn={() => {
+                  HapticFeedback();
+                  navigation.goBack();
+                }}/>
+              ),
+            }
+          )}/>
         <Stack.Screen
           name="GameScreen"
           component={GameScreen}

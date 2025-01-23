@@ -9,7 +9,6 @@ import {
     Divider,
     Text,
     Icon,
-    Switch
 } from 'react-native-paper';
 import * as RNFS from '@dr.pogodin/react-native-fs';
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -29,7 +28,6 @@ function SettingsScreen({navigation}) {
 
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [user, setUser] =  React.useState('');
-  const [useDrive, setUseDrive] = React.useState(false);
 
   const [isReady, setIsReady] = React.useState(false);
 
@@ -68,7 +66,7 @@ function SettingsScreen({navigation}) {
                 source='volume-high'
                 color={colors.fribaGrey}
                 size={18}/>
-              Volume
+              {'\t'}Volume
             </Text>
           </View>
           <Text style={styles.categoryText}>
@@ -87,7 +85,6 @@ function SettingsScreen({navigation}) {
                       AsyncStorage.removeItem(USER_KEY);
                       setLoggedIn(false);
                       setUser('');
-                      setUseDrive(false);
                     }
                   },
                   {
@@ -97,7 +94,14 @@ function SettingsScreen({navigation}) {
                 ])
               } else {
                 try {
-                  GoogleSignin.configure();
+                  GoogleSignin.configure({
+                    scopes: [
+                      'https://www.googleapis.com/auth/userinfo.email',
+                      'https://www.googleapis.com/auth/userinfo.profile',
+                      'https://www.googleapis.com/auth/drive.file',
+                      'https://www.googleapis.com/auth/drive.appdata'
+                    ]
+                  });
                   await GoogleSignin.hasPlayServices();
                   const response = await GoogleSignin.signIn();
                   if (response.type === 'success') {
@@ -137,7 +141,7 @@ function SettingsScreen({navigation}) {
                 <Icon 
                   source={loggedIn ? 'check-circle-outline' : 'close-circle-outline'}
                   color={loggedIn ? colors.fribaGreen : colors.fribaRed}
-                  size={30}/>
+                  size={24}/>
               </Text>
             </View>
             <View style={styles.description}>
@@ -150,25 +154,6 @@ function SettingsScreen({navigation}) {
             Saved data
           </Text>
           <Divider bold/>
-          <View style={styles.option}>
-            <Text style={styles.settingText}>
-              <Icon 
-                source='cloud'
-                color={colors.fribaGrey}
-                size={18}/>
-              {'\t'}Use Google Drive
-            </Text>
-            <Switch
-              value={useDrive}
-              color={colors.fribaGreen}
-              onValueChange={() => {
-                if (loggedIn) {
-                  setUseDrive(!useDrive);
-                } else {
-                  Alert.alert('Error: Not logged in', 'Log in to a Google account to use Drive');
-                }
-              }}/>
-          </View>
           <Pressable onPressIn={() => {
             HapticFeedback();
             Alert.alert('Delete data?', 'All saved data will be removed', [
@@ -197,6 +182,11 @@ function SettingsScreen({navigation}) {
               </Text>
             </View>
           </Pressable>
+          <View style={styles.description}>
+              <Text style={styles.descriptionText}>
+                Deletes saved games from the device
+              </Text>
+            </View>
       </View>
     </SafeAreaView>
   );
