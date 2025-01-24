@@ -10,7 +10,7 @@ import { HapticFeedback } from "../assets/Settings";
 import { styles, colors } from "../assets/Styles";
 
 
-function HomeScreen({navigation}) {
+function HomeScreen({navigation}: any) {
 
   usePreventRemove(true, () => {});
 

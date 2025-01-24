@@ -8,8 +8,8 @@ import { usePreventRemove } from '@react-navigation/native';
 import * as RNFS from '@dr.pogodin/react-native-fs';
 import { 
     DataTable, 
-    ActivityIndicator, 
-    ToggleButton 
+    ActivityIndicator,
+    SegmentedButtons
 } from 'react-native-paper';
 import { Dropdown } from 'react-native-element-dropdown';
 import base64 from 'react-native-base64';
@@ -22,7 +22,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const USER_KEY = 'USER_STATE';
 
-function ScoreScreen({navigation}) {
+function ScoreScreen({navigation}: any) {
 
     const [saved, setSaved] = React.useState(false);
     const [loading, setLoading] = React.useState(true);
@@ -35,42 +35,18 @@ function ScoreScreen({navigation}) {
     const [dropdownData, setDropdownData] = React.useState([{'label': '', 'value': ''}]);
 
     const [toggleValue, setToggleValue] = React.useState('local');
-    const [toggleDisabled, setToggleDisabled] = React.useState(true);
+    const [toggleLocal, setToggleLocal] = React.useState(true);
+    const [toggleDrive, setToggleDrive] = React.useState(true);
 
     const gdrive = new GDrive();
-    const [test, setTest] = React.useState('');
     const [driveGames, setDriveGames] = React.useState([{'label': '', 'value': ''}]);
 
-    //Finds all saved games when opening the screen
+    //Finds all saved games when focusing the screen
     React.useEffect(() => {
         const unsubscribe = navigation.addListener('focus', async() => {
-            //Check for Google login
-            const savedString = await AsyncStorage.getItem(USER_KEY);
-            const savedUser = savedString
-                ? JSON.parse(savedString)
-                : undefined;
-
-            if (savedUser !== undefined) { //Get list of files from Drive
-                gdrive.accessToken = (await GoogleSignin.getTokens()).accessToken;
-                gdrive.fetchTimeout = 3000;
-                const files =  await gdrive.files.list({spaces: APP_DATA_FOLDER_ID});
-                let listNames = [];
-                for (const data of files.files) {
-                    let newListItem = {
-                        'label': data.name
-                        .replace('.json', '')
-                        .replaceAll('_', ' '),
-                        'value': data.id
-                    }
-                    listNames.push(newListItem);
-                }
-                setDriveGames(listNames);
-                //setTest(JSON.stringify(listNames));
-                setToggleDisabled(false);
-            } else {
-                setToggleDisabled(true);
-                setToggleValue('local');
-            }
+            let found = false;
+            //Search device for saved games
+            console.log('serch');
             RNFS.readDir(RNFS.DownloadDirectoryPath + '/friba')
             .then((result) => {
                 if (result.length > 0) {
@@ -97,31 +73,54 @@ function ScoreScreen({navigation}) {
                     return RNFS.readFile(RNFS.DownloadDirectoryPath + '/friba/' + JSON.stringify(names[names.length-1]).replaceAll('"', ''), 'utf8')
                     .then((contents) => {
                         setItems(JSON.parse(contents));
-                        setSaved(true);
-                        setLoading(false);
+                        setToggleLocal(false);
+                        found = true;
+                        console.log('heh');
                     });
+                }
+                setToggleLocal(true);
+            });
+
+            //Check for Google login
+            const savedString = await AsyncStorage.getItem(USER_KEY);
+            const savedUser = savedString
+                ? JSON.parse(savedString)
+                : undefined;
+
+            if (savedUser !== undefined) { //Get list of files from Drive
+                gdrive.accessToken = (await GoogleSignin.getTokens()).accessToken;
+                gdrive.fetchTimeout = 3000;
+                const files =  await gdrive.files.list({spaces: APP_DATA_FOLDER_ID});
+                if (files.files.length > 0) {
+                    let listNames = [];
+                    for (const data of files.files) {
+                        let newListItem = {
+                            'label': data.name
+                            .replace('.json', '')
+                            .replaceAll('_', ' '),
+                            'value': data.id
+                        }
+                        listNames.push(newListItem);
+                    }
+                    setDriveGames(listNames);
+                    setToggleDrive(false);
+                    found = true;
+                }
+            } else {
+                setToggleDrive(true);
+                setToggleValue('local');
+            }
+            setTimeout(() => {
+                if (found) {
+                    setSaved(true);
+                    setLoading(false);
                 } else {
                     setLoading(false);
                 }
-            });
+            }, 500);
         });
         return unsubscribe;
     }, [navigation]);
-
-    React.useEffect(() => {
-        if (toggleValue === 'drive') {
-            setLastGame(
-                JSON.stringify(driveGames[driveGames.length-1].label)
-                .replaceAll('"', '')
-                .replace('.json', '')
-                .replaceAll('_', ' ')
-            );
-            setDropdownData(driveGames);
-        } else {
-            setDropdownData(localGames);
-        }
-
-    }, [toggleValue]);
 
     const [page, setPage] = React.useState<number>(0);
     const [numberOfItemsPerPageList] = React.useState([9]);
@@ -145,15 +144,34 @@ function ScoreScreen({navigation}) {
         <SafeAreaView style={styles.container}>
             <View style={styles.screen}>
                 <View style={styles.option}>
-                    <ToggleButton.Row onValueChange={value => setToggleValue(value)} value={toggleValue}>
-                        <ToggleButton icon='folder' value='local' />
-                        <ToggleButton icon='google-drive' value='drive' disabled={toggleDisabled}/>
-                    </ToggleButton.Row>
-                </View>
-                <View style={styles.option}>
-                <   Text style={styles.descriptionText}>
-                        {test}
-                    </Text>
+                    <SegmentedButtons
+                        value={toggleValue}
+                        onValueChange={setToggleValue}
+                        theme={{colors: {secondaryContainer: colors.fribaGreen}}}
+                        buttons={[
+                            {
+                                value: 'local',
+                                icon: 'folder',
+                                disabled: toggleLocal,
+                                onPress: (() => {
+                                    setDropdownData(localGames);
+                                })
+                            },
+                            {
+                                value: 'drive',
+                                icon: 'google-drive',
+                                disabled: toggleDrive,
+                                onPress: (() => {
+                                    setLastGame(
+                                        JSON.stringify(driveGames[0].label)
+                                        .replaceAll('"', '')
+                                        .replace('.json', '')
+                                        .replaceAll('_', ' ')
+                                    );
+                                    setDropdownData(driveGames);
+                                })
+                            }
+                        ]}/>
                 </View>
                 {loading ? <View style={{paddingVertical:'80%'}}>
                     <ActivityIndicator animating={loading} size={70} color={colors.fribaGreen}/>
@@ -188,6 +206,7 @@ function ScoreScreen({navigation}) {
                                         setItems(JSON.parse(base64.decode(response)));
                                     });
                                 }
+                                setPage(0);
                             }}/>
                     </View>
                     <View style={styles.option}>

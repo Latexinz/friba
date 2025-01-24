@@ -24,7 +24,7 @@ import { styles, colors } from "../assets/Styles";
 
 const USER_KEY = 'USER_STATE';
 
-function SettingsScreen({navigation}) {
+function SettingsScreen({navigation}: any) {
 
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [user, setUser] =  React.useState('');

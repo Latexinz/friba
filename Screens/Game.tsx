@@ -27,7 +27,7 @@ import { colors, styles } from "../assets/Styles";
 const IN_PROGRESS_KEY = 'GAME_IN_PROGRESS';
 const USER_KEY = 'USER_STATE';
 
-function GameScreen({navigation, route}) {
+function GameScreen({navigation, route}: any) {
 
     const [isReady, setIsReady] = React.useState(false);
 

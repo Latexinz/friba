@@ -17,7 +17,7 @@ import { styles, colors } from "../assets/Styles";
 import * as courseData from '../assets/radat.json';
 
 
-function SetupScreen({navigation}) {
+function SetupScreen({navigation}: any) {
 
   const [value, setValue] = React.useState("turku"); //Default location
 
@@ -66,6 +66,7 @@ function SetupScreen({navigation}) {
             onChange={item => {
               setValue(item.value);
               setItems(courseData[item.value]);
+              setPage(0);
             }}/>
         </View>
         <Divider bold/>
