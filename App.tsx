@@ -1,5 +1,9 @@
 import React from "react";
-import {Alert, StatusBar, View} from "react-native";
+import {
+  Alert, 
+  StatusBar, 
+  View
+} from "react-native";
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {IconButton, ActivityIndicator} from 'react-native-paper';
@@ -129,10 +133,7 @@ export default function app() {
 
   return(
     <NavigationContainer
-      initialState={initialState}
-      onStateChange={(state) => 
-        AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(state))
-      }>
+      initialState={initialState}>
       <StatusBar
             backgroundColor={colors.fribaGreen}/>
       <Stack.Navigator initialRouteName="HomeScreen">

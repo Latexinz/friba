@@ -46,7 +46,6 @@ function ScoreScreen({navigation}: any) {
         const unsubscribe = navigation.addListener('focus', async() => {
             let found = false;
             //Search device for saved games
-            console.log('serch');
             RNFS.readDir(RNFS.DownloadDirectoryPath + '/friba')
             .then((result) => {
                 if (result.length > 0) {
@@ -75,7 +74,6 @@ function ScoreScreen({navigation}: any) {
                         setItems(JSON.parse(contents));
                         setToggleLocal(false);
                         found = true;
-                        console.log('heh');
                     });
                 }
                 setToggleLocal(true);
@@ -110,6 +108,7 @@ function ScoreScreen({navigation}: any) {
                 setToggleDrive(true);
                 setToggleValue('local');
             }
+            //Wait for files to be found
             setTimeout(() => {
                 if (found) {
                     setSaved(true);

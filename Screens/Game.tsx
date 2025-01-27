@@ -13,7 +13,7 @@ import {
     Button,
     ActivityIndicator 
 } from "react-native-paper";
-import { usePreventRemove } from '@react-navigation/native';
+import { usePreventRemove, useNavigationState } from '@react-navigation/native';
 import * as RNFS from '@dr.pogodin/react-native-fs';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import base64 from 'react-native-base64';
@@ -24,6 +24,7 @@ import { HapticFeedback } from "../assets/Settings";
 import { colors, styles } from "../assets/Styles";
 
 
+const PERSISTENCE_KEY = 'NAVIGATION_STATE_V1';
 const IN_PROGRESS_KEY = 'GAME_IN_PROGRESS';
 const USER_KEY = 'USER_STATE';
 
@@ -71,6 +72,8 @@ function GameScreen({navigation, route}: any) {
     //check states again
     React.useEffect(() => {
         const unsubscribe = navigation.addListener('focus', () => {
+            const state = navigation.getState();
+            AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(state)); //set state so if app closed mid game, return here
             setIsReady(false);
         });
         return unsubscribe;
@@ -79,6 +82,7 @@ function GameScreen({navigation, route}: any) {
     //Remembers scores if app was closed mid game
     //also checks if user logged in to Google
     React.useEffect(() => {
+        console.log('Game restored');
         const restoreState = async () => {
             try {
                 const savedStateString = await AsyncStorage.multiGet([IN_PROGRESS_KEY, USER_KEY]);
@@ -226,13 +230,25 @@ function GameScreen({navigation, route}: any) {
                                                         JSON.stringify(items),
                                                         'utf8')
                                                     .then((success) => {
-                                                        AsyncStorage.removeItem(IN_PROGRESS_KEY);
+                                                        AsyncStorage.multiRemove([IN_PROGRESS_KEY, PERSISTENCE_KEY]);
                                                         navigation.navigate('ScoreScreen');
                                                     })
                                                     .catch((error) => {
                                                         //console.log(error.message);
                                                     });
                                                 }
+                                            } else {
+                                                RNFS.writeFile(
+                                                    RNFS.DownloadDirectoryPath + '/friba/' + route.params["time"] + '_' + name +'.json',
+                                                    JSON.stringify(items),
+                                                    'utf8')
+                                                .then((success) => {
+                                                    AsyncStorage.multiRemove([IN_PROGRESS_KEY, PERSISTENCE_KEY]);
+                                                    navigation.navigate('ScoreScreen');
+                                                })
+                                                .catch((error) => {
+                                                    //console.log(error.message);
+                                                });
                                             }
                                         }
                                     },
@@ -246,7 +262,7 @@ function GameScreen({navigation, route}: any) {
                                     {
                                         text: 'Yes',
                                         onPress: () => {
-                                            AsyncStorage.removeItem(IN_PROGRESS_KEY)
+                                            AsyncStorage.multiRemove([IN_PROGRESS_KEY, PERSISTENCE_KEY]);
                                             navigation.navigate('HomeScreen')
                                         }
                                     },
