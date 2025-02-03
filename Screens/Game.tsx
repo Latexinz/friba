@@ -13,8 +13,7 @@ import {
     Button,
     ActivityIndicator 
 } from "react-native-paper";
-import { usePreventRemove, useNavigationState } from '@react-navigation/native';
-import * as RNFS from '@dr.pogodin/react-native-fs';
+import { usePreventRemove } from '@react-navigation/native';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import base64 from 'react-native-base64';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
@@ -68,50 +67,44 @@ function GameScreen({navigation, route}: any) {
         );
     };
 
-    //If screen out of focus fe going to settings and coming back
+    //If screen out of focus FE going to settings and coming back
     //check states again
     React.useEffect(() => {
         const unsubscribe = navigation.addListener('focus', () => {
-            const state = navigation.getState();
-            AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(state)); //set state so if app closed mid game, return here
-            setIsReady(false);
+            const restoreState = async () => {
+                try {
+                    const savedStateString = await AsyncStorage.multiGet([IN_PROGRESS_KEY, USER_KEY]);
+                    //Check states if app closed while game in progress
+                    //multiGet returns a nested array with key as index 0 and value as index 1
+                    const previousState = savedStateString[0][1]
+                    ? JSON.parse(savedStateString[0][1])
+                    : undefined;
+                    const user = savedStateString[1][1]
+                    ? JSON.parse(savedStateString[1][1])
+                    : undefined;
+            
+                    if (previousState !== undefined) { //restore state
+                        setItems(previousState);
+                        setIsValid(previousState.every(item => item.score > 0));
+                    } else {
+                        const state = navigation.getState();
+                        AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(state)); //set state so if app closed mid game, return here
+                    }
+                    if (user !== undefined) {
+                        setUseDrive(true);
+                    } else {
+                        setUseDrive(false);
+                    }
+                } finally {
+                    setIsReady(true);
+                }
+            };
+            if (!isReady) {
+                restoreState();
+            }
         });
         return unsubscribe;
     }, [navigation]);
-
-    //Remembers scores if app was closed mid game
-    //also checks if user logged in to Google
-    React.useEffect(() => {
-        console.log('Game restored');
-        const restoreState = async () => {
-            try {
-                const savedStateString = await AsyncStorage.multiGet([IN_PROGRESS_KEY, USER_KEY]);
-                //multiGet returns a nested array with key as index 0 and value as index 1
-                const state = savedStateString[0][1]
-                ? JSON.parse(savedStateString[0][1])
-                : undefined;
-                const user = savedStateString[1][1]
-                ? JSON.parse(savedStateString[1][1])
-                : undefined;
-        
-                if (state !== undefined) {
-                    setItems(state);
-                    setIsValid(state.every(item => item.score > 0));
-                }
-                if (user !== undefined) {
-                    setUseDrive(true);
-                } else {
-                    setUseDrive(false);
-                }
-            } finally {
-                setIsReady(true);
-            }
-        };
-        
-        if (!isReady) {
-            restoreState();
-        }
-    }, [isReady]);
 
     //Activity indicator while restoring state
     if (!isReady) {
@@ -222,33 +215,25 @@ function GameScreen({navigation, route}: any) {
 
                                                     return upload;
                                                 } catch (error) {
-                                                    Alert.alert('Error Uploading to Drive');
+                                                    Alert.alert('Error Uploading to Drive', 'Failed to save score to Google Drive.');
                                                 } finally {
-                                                    //Save to device
-                                                    RNFS.writeFile(
-                                                        RNFS.DownloadDirectoryPath + '/friba/' + route.params["time"] + '_' + name +'.json',
-                                                        JSON.stringify(items),
-                                                        'utf8')
-                                                    .then((success) => {
-                                                        AsyncStorage.multiRemove([IN_PROGRESS_KEY, PERSISTENCE_KEY]);
-                                                        navigation.navigate('ScoreScreen');
-                                                    })
-                                                    .catch((error) => {
-                                                        //console.log(error.message);
-                                                    });
-                                                }
-                                            } else {
-                                                RNFS.writeFile(
-                                                    RNFS.DownloadDirectoryPath + '/friba/' + route.params["time"] + '_' + name +'.json',
-                                                    JSON.stringify(items),
-                                                    'utf8')
-                                                .then((success) => {
                                                     AsyncStorage.multiRemove([IN_PROGRESS_KEY, PERSISTENCE_KEY]);
                                                     navigation.navigate('ScoreScreen');
-                                                })
-                                                .catch((error) => {
-                                                    //console.log(error.message);
-                                                });
+                                                }
+                                            } else {
+                                                Alert.alert('Warning: Score will not be saved.', 'To save the score, press cancel and go into settings to sign into Google.', [
+                                                    {
+                                                        text: 'OK',
+                                                        onPress: () => {
+                                                            AsyncStorage.multiRemove([IN_PROGRESS_KEY, PERSISTENCE_KEY]);
+                                                            navigation.navigate('HomeScreen');  
+                                                        }
+                                                    },
+                                                    {
+                                                        text: 'cancel',
+                                                        style: 'cancel'
+                                                    }
+                                                ]);
                                             }
                                         }
                                     },

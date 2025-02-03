@@ -8,7 +8,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {IconButton, ActivityIndicator} from 'react-native-paper';
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import * as RNFS from '@dr.pogodin/react-native-fs';
 import {
   GoogleSignin, 
   statusCodes, 
@@ -37,15 +36,7 @@ export default function app() {
   const [initialState, setInitialState] = React.useState();
 
   React.useEffect(() => {
-    //Check if dir for saved games exists
-    const initDir = async () => {
-      const exists = await RNFS.exists(RNFS.DownloadDirectoryPath + '/friba');
-      if (!exists) { 
-        RNFS.mkdir(RNFS.DownloadDirectoryPath + '/friba');
-      }
-    };
-
-    //Restore app state if closed and opened again
+    //Restore app state if closed mid game
     const restoreState = async () => {
       try {
         const savedStateString = await AsyncStorage.getItem(PERSISTENCE_KEY);
@@ -61,33 +52,22 @@ export default function app() {
       }
     };
 
-    const user = async () => {
-      const savedString = await AsyncStorage.getItem(USER_KEY);
-      const savedUser = savedString
-        ? JSON.parse(savedString)
-        : undefined;
-
-      if (savedUser !== undefined) {
-        signIn();
-      }
-    };
-
-    //Check for google signin
+    //Google signin
     const signIn = async () => {
       try {
+        GoogleSignin.configure({
+          scopes: [
+            'https://www.googleapis.com/auth/userinfo.email',
+            'https://www.googleapis.com/auth/userinfo.profile',
+            'https://www.googleapis.com/auth/drive.file',
+            'https://www.googleapis.com/auth/drive.appdata'
+          ]
+        });
         await GoogleSignin.hasPlayServices();
         const previousSignIn = GoogleSignin.hasPreviousSignIn();
         if (previousSignIn) { //If previous signin found, check for user
           const user = GoogleSignin.getCurrentUser();
           if (user === null) { //Recover user if not found
-            GoogleSignin.configure({
-              scopes: [
-                'https://www.googleapis.com/auth/userinfo.email',
-                'https://www.googleapis.com/auth/userinfo.profile',
-                'https://www.googleapis.com/auth/drive.file',
-                'https://www.googleapis.com/auth/drive.appdata'
-              ]
-            });
             const responseSilent = await GoogleSignin.signInSilently();
             if (responseSilent.type === 'success') {
               AsyncStorage.setItem(USER_KEY, JSON.stringify(responseSilent.data.user.email));
@@ -97,10 +77,20 @@ export default function app() {
                 AsyncStorage.setItem(USER_KEY, JSON.stringify(responseLoud.data.user.email));
               } else { //Remove user from store
                 AsyncStorage.removeItem(USER_KEY);
+                Alert.alert('Sign in Cancelled', 'Sign in to Google to save scores. You can do this anytime from settings');
               }
             }
           }
+        } else {
+          const responseLoud = await GoogleSignin.signIn();
+          if (responseLoud.type === 'success') {
+            AsyncStorage.setItem(USER_KEY, JSON.stringify(responseLoud.data.user.email));
+          } else { //Remove user from store
+            AsyncStorage.removeItem(USER_KEY);
+            Alert.alert('Sign in Cancelled', 'Sign in to Google to save scores. You can do this anytime from settings');
+          }
         }
+        restoreState();
       } catch (error) { //Error handling
         if (isErrorWithCode(error)) {
           switch (error.code) {
@@ -116,9 +106,7 @@ export default function app() {
     };
 
     if (!isReady) {
-      initDir();
-      user();
-      restoreState();
+      signIn();
     }
   }, [isReady]);
 
@@ -134,8 +122,7 @@ export default function app() {
   return(
     <NavigationContainer
       initialState={initialState}>
-      <StatusBar
-            backgroundColor={colors.fribaGreen}/>
+      <StatusBar backgroundColor={colors.fribaGreen}/>
       <Stack.Navigator initialRouteName="HomeScreen">
         <Stack.Screen
           name="HomeScreen"
