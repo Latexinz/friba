@@ -218,7 +218,9 @@ function GameScreen({navigation, route}: any) {
                                                     Alert.alert('Error Uploading to Drive', 'Failed to save score to Google Drive.');
                                                 } finally {
                                                     AsyncStorage.multiRemove([IN_PROGRESS_KEY, PERSISTENCE_KEY]);
-                                                    navigation.navigate('ScoreScreen');
+                                                    setTimeout(() => {
+                                                        navigation.navigate('ScoreScreen');
+                                                    }, 1000);
                                                 }
                                             } else {
                                                 Alert.alert('Warning: Score will not be saved.', 'To save the score, press cancel and go into settings to sign into Google.', [

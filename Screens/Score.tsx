@@ -20,10 +20,12 @@ const USER_KEY = 'USER_STATE';
 function ScoreScreen({navigation}: any) {
 
     const [saved, setSaved] = React.useState(false);
-    const [loading, setLoading] = React.useState(true);
+    const [loadingScreen, setLoadingScreen] = React.useState(true);
+    const [loadingFile, setLoadingFile] = React.useState(false);
 
     const [items, setItems] = React.useState([]);
     const [lastGame, setLastGame] = React.useState('');
+    const [total, setTotal] = React.useState('N/A');
 
     const [dropValue, setDropValue] = React.useState(lastGame);
     const [games, setGames] = React.useState([{'label': '', 'value': ''}]);
@@ -33,7 +35,8 @@ function ScoreScreen({navigation}: any) {
     //Finds all saved games when focusing the screen
     React.useEffect(() => {
         const unsubscribe = navigation.addListener('focus', async() => {
-            setLoading(true);
+            setSaved(false);
+            setLoadingScreen(true);
             //Check for Google login
             const savedString = await AsyncStorage.getItem(USER_KEY);
             const savedUser = savedString
@@ -60,7 +63,9 @@ function ScoreScreen({navigation}: any) {
                     //Get the score for the latest game
                     await gdrive.files.getText(listNames[0].value)
                     .then((response) => {
-                        setItems(JSON.parse(base64.decode(response)));
+                        const data = JSON.parse(base64.decode(response));
+                        setItems(data);
+                        setTotal(data.reduce((n: number, {score}: any) => n + score, 0));
                     });
                     setLastGame(
                         JSON.stringify(names[0])
@@ -74,7 +79,7 @@ function ScoreScreen({navigation}: any) {
             } else {
                 setSaved(false);
             }
-            setLoading(false);
+            setLoadingScreen(false);
         });
         return unsubscribe;
     }, [navigation]);
@@ -100,8 +105,8 @@ function ScoreScreen({navigation}: any) {
     return(
         <SafeAreaView style={styles.container}>
             <View style={styles.screen}>
-                {loading ? <View style={{paddingVertical:'80%'}}>
-                    <ActivityIndicator animating={loading} size={70} color={colors.fribaGreen}/>
+                {loadingScreen ? <View style={{paddingVertical:'80%'}}>
+                    <ActivityIndicator animating={loadingScreen} size={70} color={colors.fribaGreen}/>
                 </View>
                 : saved ? <View>
                     <View style={styles.option}>
@@ -120,21 +125,28 @@ function ScoreScreen({navigation}: any) {
                             value={dropValue}
                             onChange={async item => {
                                 setDropValue(item.value);
+                                setPage(0);
+                                setLoadingFile(true);
                                 gdrive.accessToken = (await GoogleSignin.getTokens()).accessToken;
                                 gdrive.fetchTimeout = 3000;
                                 await gdrive.files.getText(item.value)
                                 .then((response) => {
-                                    setItems(JSON.parse(base64.decode(response)));
+                                    const data = JSON.parse(base64.decode(response));
+                                    setItems(data);
+                                    setTotal(data.reduce((n: number, {score}: any) => n + score, 0));
+                                    setLoadingFile(false);
                                 });
-                                setPage(0);
                             }}/>
                     </View>
                     <View style={styles.option}>
                         <Text style={styles.settingText}>
-                            Score: {items.reduce((n: number, {score}: any) => n + score, 0)}
+                            Score: {loadingFile ? 'N/A' : total}
                         </Text>
                     </View>
-                    <View style={styles.option}>
+                    {loadingFile ? <View style={{paddingVertical:'50%'}}>
+                        <ActivityIndicator animating={loadingFile} size={70} color={colors.fribaGreen}/>
+                    </View>
+                    : <View style={styles.option}>
                         <DataTable>
                             <DataTable.Header>
                                 <DataTable.Title textStyle={{fontSize:20, color:'black'}}>Hole</DataTable.Title>
@@ -159,7 +171,7 @@ function ScoreScreen({navigation}: any) {
                                 selectPageDropdownLabel={'Rows per page'}
                             />
                         </DataTable>
-                    </View>
+                    </View>}
                 </View>
                 //Placeholder text when no scores found
                 :<View style={{paddingTop: '50%'}}>

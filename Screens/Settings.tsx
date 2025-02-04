@@ -9,6 +9,7 @@ import {
     Divider,
     Text,
     Icon,
+    ActivityIndicator
 } from 'react-native-paper';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
@@ -16,6 +17,7 @@ import {
   statusCodes,
   isErrorWithCode
 } from "@react-native-google-signin/google-signin";
+import { GDrive, APP_DATA_FOLDER_ID } from '@robinbobin/react-native-google-drive-api-wrapper';
 
 import { HapticFeedback } from "../assets/Settings";
 import { styles, colors } from "../assets/Styles";
@@ -29,6 +31,9 @@ function SettingsScreen({navigation}: any) {
   const [user, setUser] =  React.useState('');
 
   const [isReady, setIsReady] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+
+  const gdrive = new GDrive();
 
   React.useEffect(() => {
     const user = async () => {
@@ -51,6 +56,14 @@ function SettingsScreen({navigation}: any) {
       user();
     }
   }, [isReady]);
+
+  if (loading) {
+    return (
+      <View style={{paddingVertical:'100%'}}>
+        <ActivityIndicator size={70} color={colors.fribaGreen}/>
+      </View>
+    );
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -111,16 +124,16 @@ function SettingsScreen({navigation}: any) {
                 if (isErrorWithCode(error)) {
                   switch (error.code) {
                     case statusCodes.PLAY_SERVICES_NOT_AVAILABLE:
-                      Alert.alert('Error signing in', 'Play services not available or outdated');
+                      Alert.alert('Error signing in', 'Play services not available or outdated.');
                       break;
                     case statusCodes.SIGN_IN_CANCELLED:
-                      Alert.alert('Error signing in', 'Sign in cancelled');
+                      Alert.alert('Error signing in', 'Sign in cancelled.');
                       break;
                     case statusCodes.IN_PROGRESS:
-                      Alert.alert('Error signing in', 'Sign in already in progress');
+                      Alert.alert('Error signing in', 'Sign in already in progress.');
                       break;
                     default:
-                      Alert.alert('Error signing in', 'Unknown error');
+                      Alert.alert('Error signing in', 'Unknown error.');
                       break;
                   }
                 }
@@ -133,7 +146,7 @@ function SettingsScreen({navigation}: any) {
                 source='google'
                 color={colors.fribaGrey}
                 size={18}/>
-              {'\t'}Google
+              {'\t'}Google login
             </Text>
             <Text style={styles.settingText}>
               <Icon 
@@ -148,17 +161,20 @@ function SettingsScreen({navigation}: any) {
             </Text>
           </View>
         </Pressable>
-        <Text style={styles.categoryText}>
-          Saved data
-        </Text>
-        <Divider bold/>
-        <Pressable onPressIn={() => {
+        <Pressable disabled={!loggedIn} onPressIn={() => {
           HapticFeedback();
-          Alert.alert('Delete data?', 'All saved data will be removed', [
+          Alert.alert('Delete all data?', 'All saved scores will be permanently removed.', [
             {
               text: 'Yes',
-              onPress: () => {
-                //Remove data from Drive appdatafolder
+              onPress: async() => {
+                setLoading(true);
+                gdrive.accessToken = (await GoogleSignin.getTokens()).accessToken;
+                gdrive.fetchTimeout = 3000;
+                const files =  await gdrive.files.list({spaces: APP_DATA_FOLDER_ID});
+                for (const data of files.files) {
+                  gdrive.files.delete(data.id);
+                }
+                setLoading(false);
               }
             },
             {
@@ -179,7 +195,7 @@ function SettingsScreen({navigation}: any) {
         </Pressable>
         <View style={styles.description}>
           <Text style={styles.descriptionText}>
-            Deletes saved games from the device
+            Deletes all saved games from Google Drive
           </Text>
         </View>
       </View>
