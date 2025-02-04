@@ -41,7 +41,7 @@ function GameScreen({navigation, route}: any) {
     const par: string = route.params["par"];
 
     const [page, setPage] = React.useState<number>(0);
-    const [numberOfItemsPerPageList] = React.useState([9]);
+    const [numberOfItemsPerPageList] = React.useState([32]);
     const [itemsPerPage, onItemsPerPageChange] = React.useState(
     numberOfItemsPerPageList[0]
     );
@@ -117,66 +117,69 @@ function GameScreen({navigation, route}: any) {
 
     return (
         <SafeAreaView style={styles.container}>
-            <ScrollView style={styles.screen}>
+            <View style={styles.screen}>
                 <View style={styles.option}>
                     <Text style={styles.settingText}>
                         {name.replaceAll('_', ' ') + '\n'}
-                        Par: {par + '\n'}
-                        Score: {items.reduce((n: number, {score}: any) => n + score, 0)}
+                        Score: {items.reduce((n: number, {score}: any) => n + score, 0)} / {par}
                     </Text>
                 </View>
                 <View style={styles.option}>
                     <DataTable>
                         <DataTable.Header>
                             <DataTable.Title textStyle={{fontSize:20, color:'black'}}>Hole</DataTable.Title>
+                            <DataTable.Title textStyle={{fontSize:20, color:'black'}}>Par</DataTable.Title>
                             <DataTable.Title style={{justifyContent: 'center'}} textStyle={{fontSize:20, color:'black'}}>Score</DataTable.Title>
                         </DataTable.Header>
 
-                        {items.slice(from, to).map((item: any) => (
-                            <DataTable.Row key={item.hole}>
-                            <DataTable.Cell textStyle={{fontSize:20, color:'black'}}>{item.hole}</DataTable.Cell>
-                            <DataTable.Cell style={{justifyContent: 'center', alignItems:'center'}} textStyle={{fontSize:40}}>
-                                <Pressable onPressIn={() => {
-                                    if (item.score > 0) {
-                                        updateScore(item.hole, item.score-1);
-                                        HapticFeedback();
-                                    };
-                                }}
-                                onPressOut={() => {
-                                    setIsValid(items.every(item => item.score > 0));
-                                    AsyncStorage.setItem(IN_PROGRESS_KEY, JSON.stringify(items));
-                                }}>
-                                    <Icon 
-                                    source='minus-circle'
-                                    color={colors.fribaGrey}
-                                    size={30}/>
-                                </Pressable>
-                                {item.score}
-                                <Pressable onPressIn={() => {
-                                    if (route.params["max"] === true) {
-                                        if (item.score < 10) {
+                        <ScrollView style={{height:'75%'}}>
+                            {items.slice(from, to).map((item: any) => (
+                                <DataTable.Row key={item.hole}>
+                                <DataTable.Cell textStyle={{fontSize:20, color:'black'}}>{item.hole}</DataTable.Cell>
+                                <DataTable.Cell textStyle={{fontSize:20, color:'black'}}>{item.par}</DataTable.Cell>
+                                <DataTable.Cell style={{justifyContent: 'center', alignItems:'center'}} textStyle={{fontSize:40}}>
+                                    <Pressable onPressIn={() => {
+                                        if (item.score > 0) {
+                                            updateScore(item.hole, item.score-1);
+                                            HapticFeedback();
+                                        };
+                                    }}
+                                    onPressOut={() => {
+                                        setIsValid(items.every(item => item.score > 0));
+                                        AsyncStorage.setItem(IN_PROGRESS_KEY, JSON.stringify(items));
+                                    }}>
+                                        <Icon 
+                                        source='minus-circle'
+                                        color={colors.fribaGrey}
+                                        size={30}/>
+                                    </Pressable>
+                                    {item.score}
+                                    <Pressable onPressIn={() => {
+                                        if (route.params["max"] === true) {
+                                            if (item.score < 10) {
+                                                updateScore(item.hole, item.score+1);
+                                                HapticFeedback();
+                                            }
+                                        } else {
                                             updateScore(item.hole, item.score+1);
                                             HapticFeedback();
                                         }
-                                    } else {
-                                        updateScore(item.hole, item.score+1);
-                                        HapticFeedback();
-                                    }
-                                }}
-                                onPressOut={() => {
-                                    setIsValid(items.every(item => item.score > 0));
-                                    AsyncStorage.setItem(IN_PROGRESS_KEY, JSON.stringify(items));
-                                }}>
-                                    <Icon 
-                                    source='plus-circle'
-                                    color={colors.fribaGrey}
-                                    size={30}/>
-                                </Pressable>
-                            </DataTable.Cell>
-                            </DataTable.Row>
-                        ))}
+                                    }}
+                                    onPressOut={() => {
+                                        setIsValid(items.every(item => item.score > 0));
+                                        AsyncStorage.setItem(IN_PROGRESS_KEY, JSON.stringify(items));
+                                    }}>
+                                        <Icon 
+                                        source='plus-circle'
+                                        color={colors.fribaGrey}
+                                        size={30}/>
+                                    </Pressable>
+                                </DataTable.Cell>
+                                </DataTable.Row>
+                            ))}
+                        </ScrollView>
 
-                        <DataTable.Pagination
+                        {/**<DataTable.Pagination
                             page={page}
                             numberOfPages={Math.ceil(items.length / itemsPerPage)}
                             onPageChange={(page) => setPage(page)}
@@ -185,12 +188,15 @@ function GameScreen({navigation, route}: any) {
                             onItemsPerPageChange={onItemsPerPageChange}
                             showFastPaginationControls
                             selectPageDropdownLabel={'Rows per page'}
-                        />
+                        />*/}
                     </DataTable>
                 </View>
-                <View style={
-                    {
-                    paddingHorizontal:'25%',
+                <View style={{
+                    paddingTop:'180%', 
+                    paddingHorizontal:'25%', 
+                    alignSelf:'center', 
+                    width:'100%', 
+                    position:'absolute'
                     }}>
                     <Button
                         mode='contained'
@@ -264,7 +270,7 @@ function GameScreen({navigation, route}: any) {
                         End Game
                     </Button>
                 </View>
-            </ScrollView>
+            </View>
         </SafeAreaView>
     );
 };

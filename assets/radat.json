@@ -19,7 +19,54 @@
             "key": "1",
             "name": "Auran frisbeegolfrata",
             "length": "9",
-            "par": "27"
+            "par": "27",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "71",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "55",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "68",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "76",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "77",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "45",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "107",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "57",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "44",
+                    "par": "3"
+                }
+            ]
         }
     ],
     "kaarina": [
@@ -27,37 +74,379 @@
             "key": "1",
             "name": "Empon frisbeegolfrata",
             "length": "4",
-            "par": "12"
+            "par": "12",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "36",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "49",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "31",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "29",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "2",
             "name": "Harvaluodon frisbeegolfrata",
             "length": "9",
-            "par": "27"
+            "par": "27",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "54",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "55",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "38",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "37",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "49",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "76",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "44",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "42",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "40",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "3",
             "name": "Keskusliikuntapuisto",
             "length": "12",
-            "par": "39"
+            "par": "39",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "99",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "64",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "60",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "58",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "92",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "68",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "142",
+                    "par": "4"
+                },
+                {
+                    "hole": "8",
+                    "distance": "96",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "185",
+                    "par": "4"
+                },
+                {
+                    "hole": "10",
+                    "distance": "108",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "135",
+                    "par": "4"
+                },
+                {
+                    "hole": "12",
+                    "distance": "64",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "4",
             "name": "Nunnan frisbeegolfrata",
             "length": "18",
-            "par": "55"
+            "par": "55",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "55",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "60",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "65",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "80",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "70",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "155",
+                    "par": "4"
+                },
+                {
+                    "hole": "7",
+                    "distance": "63",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "73",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "53",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "63",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "54",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "93",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "68",
+                    "par": "3"
+                },
+                {
+                    "hole": "14",
+                    "distance": "83",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "57",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "57",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "82",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "76",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "5",
             "name": "Piikkiön koulukeskus",
             "length": "5",
-            "par": "15"
+            "par": "15",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "64",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "39",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "51",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "55",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "37",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "6",
             "name": "Toivonlinnan frisbeegolfrata",
             "length": "18",
-            "par": "55"
+            "par": "55",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "75",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "92",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "54",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "76",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "63",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "130",
+                    "par": "4"
+                },
+                {
+                    "hole": "7",
+                    "distance": "74",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "51",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "90",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "58",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "89",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "82",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "81",
+                    "par": "3"
+                },
+                {
+                    "hole": "14",
+                    "distance": "52",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "60",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "89",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "123",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "47",
+                    "par": "3"
+                }
+            ]
         }
     ],
     "lieto": [
@@ -65,31 +454,341 @@
             "key": "1",
             "name": "Ilmaristen frisbeegolfrata",
             "length": "7",
-            "par": "21"
+            "par": "21",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "37",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "40",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "51",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "46",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "30",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "36",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "50",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "2",
             "name": "Liedon frisbeegolfrata",
             "length": "18",
-            "par": "55"
+            "par": "55",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "75",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "68",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "62",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "148",
+                    "par": "4"
+                },
+                {
+                    "hole": "5",
+                    "distance": "95",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "75",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "58",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "77",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "70",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "74",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "81",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "60",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "57",
+                    "par": "3"
+                },
+                {
+                    "hole": "14",
+                    "distance": "75",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "91",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "52",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "45",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "62",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "3",
             "name": "Pahkamäen frisbeegolfrata",
             "length": "6",
-            "par": "18"
+            "par": "18",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "45",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "43",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "61",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "47",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "50",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "49",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "4",
             "name": "Tarvasjoki DiscGolfPark",
             "length": "9",
-            "par": "27"
+            "par": "27",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "45",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "55",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "69",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "73",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "56",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "59",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "74",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "63",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "65",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "5",
             "name": "Yliskulman frisbeegolfrata",
             "length": "20",
-            "par": "70"
+            "par": "70",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "79",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "86",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "129",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "116",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "125",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "67",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "181",
+                    "par": "4"
+                },
+                {
+                    "hole": "8",
+                    "distance": "78",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "201",
+                    "par": "4"
+                },
+                {
+                    "hole": "10",
+                    "distance": "85",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "223",
+                    "par": "5"
+                },
+                {
+                    "hole": "12",
+                    "distance": "80",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "220",
+                    "par": "4"
+                },
+                {
+                    "hole": "14",
+                    "distance": "176",
+                    "par": "4"
+                },
+                {
+                    "hole": "15",
+                    "distance": "210",
+                    "par": "4"
+                },
+                {
+                    "hole": "16",
+                    "distance": "82",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "193",
+                    "par": "4"
+                },
+                {
+                    "hole": "18",
+                    "distance": "230",
+                    "par": "4"
+                },
+                {
+                    "hole": "19",
+                    "distance": "196",
+                    "par": "4"
+                },
+                {
+                    "hole": "20",
+                    "distance": "82",
+                    "par": "3"
+                }
+            ]
         }
     ],
     "masku": [
@@ -97,13 +796,132 @@
             "key": "1",
             "name": "Askaisten koulun frisbeegolfrata",
             "length": "5",
-            "par": "15"
+            "par": "15",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "35",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "49",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "46",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "32",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "31",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "2",
             "name": "Masku frisbeegolf",
             "length": "18",
-            "par": "60"
+            "par": "60",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "257",
+                    "par": "5"
+                },
+                {
+                    "hole": "2",
+                    "distance": "76",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "57",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "118",
+                    "par": "4"
+                },
+                {
+                    "hole": "5",
+                    "distance": "103",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "148",
+                    "par": "4"
+                },
+                {
+                    "hole": "7",
+                    "distance": "51",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "81",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "111",
+                    "par": "4"
+                },
+                {
+                    "hole": "10",
+                    "distance": "58",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "69",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "94",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "64",
+                    "par": "3"
+                },
+                {
+                    "hole": "14",
+                    "distance": "125",
+                    "par": "4"
+                },
+                {
+                    "hole": "15",
+                    "distance": "80",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "79",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "113",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "77",
+                    "par": "3"
+                }
+            ]
         }
     ],
     "naantali": [
@@ -111,31 +929,321 @@
             "key": "1",
             "name": "Haijainen DiscGolfPark",
             "length": "18",
-            "par": "59"
+            "par": "59",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "73",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "101",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "188",
+                    "par": "4"
+                },
+                {
+                    "hole": "4",
+                    "distance": "71",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "88",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "91",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "161",
+                    "par": "4"
+                },
+                {
+                    "hole": "8",
+                    "distance": "69",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "64",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "111",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "92",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "151",
+                    "par": "4"
+                },
+                {
+                    "hole": "13",
+                    "distance": "152",
+                    "par": "4"
+                },
+                {
+                    "hole": "14",
+                    "distance": "104",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "67",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "96",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "187",
+                    "par": "4"
+                },
+                {
+                    "hole": "18",
+                    "distance": "66",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "2",
             "name": "Iso Maisaari",
             "length": "10",
-            "par": "30"
+            "par": "30",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "39",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "52",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "77",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "45",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "64",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "128",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "65",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "62",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "64",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "60",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "3",
             "name": "Kultaranta Resort",
             "length": "5",
-            "par": "15"
+            "par": "15",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "58",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "60",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "74",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "122",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "55",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "4",
             "name": "Rymättylän koulun frisbeegolfrata",
             "length": "5",
-            "par": "15"
+            "par": "15",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "31",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "45",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "44",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "38",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "28",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "5",
             "name": "Suopelto DiscGolfPark",
             "length": "18",
-            "par": "55"
+            "par": "55",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "43",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "66",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "64",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "52",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "57",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "45",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "88",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "79",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "62",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "78",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "101",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "84",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "172",
+                    "par": "4"
+                },
+                {
+                    "hole": "14",
+                    "distance": "151",
+                    "par": "4"
+                },
+                {
+                    "hole": "15",
+                    "distance": "103",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "56",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "53",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "56",
+                    "par": "3"
+                }
+            ]
         }
     ],
     "nousiainen": [
@@ -143,13 +1251,197 @@
             "key": "1",
             "name": "Mikko Rantasen frisbeegolfrata",
             "length": "18",
-            "par": "57"
+            "par": "57",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "75",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "67",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "66",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "179",
+                    "par": "4"
+                },
+                {
+                    "hole": "5",
+                    "distance": "88",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "110",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "140",
+                    "par": "4"
+                },
+                {
+                    "hole": "8",
+                    "distance": "71",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "157",
+                    "par": "4"
+                },
+                {
+                    "hole": "10",
+                    "distance": "106",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "84",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "69",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "84",
+                    "par": "3"
+                },
+                {
+                    "hole": "14",
+                    "distance": "72",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "106",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "96",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "67",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "75",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "2",
             "name": "Valpperin frisbeegolfrata",
             "length": "18",
-            "par": "59"
+            "par": "59",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "59",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "183",
+                    "par": "4"
+                },
+                {
+                    "hole": "3",
+                    "distance": "155",
+                    "par": "4"
+                },
+                {
+                    "hole": "4",
+                    "distance": "84",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "80",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "70",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "323",
+                    "par": "5"
+                },
+                {
+                    "hole": "8",
+                    "distance": "76",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "112",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "96",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "78",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "103",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "81",
+                    "par": "3"
+                },
+                {
+                    "hole": "14",
+                    "distance": "161",
+                    "par": "4"
+                },
+                {
+                    "hole": "15",
+                    "distance": "110",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "85",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "62",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "100",
+                    "par": "3"
+                }
+            ]
         }
     ],
     "paimio": [
@@ -157,13 +1449,137 @@
             "key": "1",
             "name": "Paimio DiscGolfPark",
             "length": "18",
-            "par": "58"
+            "par": "58",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "91",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "85",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "81",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "122",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "64",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "100",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "56",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "106",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "106",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "151",
+                    "par": "4"
+                },
+                {
+                    "hole": "11",
+                    "distance": "96",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "76",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "180",
+                    "par": "4"
+                },
+                {
+                    "hole": "14",
+                    "distance": "167",
+                    "par": "4"
+                },
+                {
+                    "hole": "15",
+                    "distance": "89",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "179",
+                    "par": "4"
+                },
+                {
+                    "hole": "17",
+                    "distance": "73",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "52",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "2",
             "name": "Paimio MultiGolfPark",
             "length": "6",
-            "par": "18"
+            "par": "18",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "48",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "58",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "64",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "63",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "44",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "61",
+                    "par": "3"
+                }
+            ]
         }
     ],
     "raisio": [
@@ -171,13 +1587,157 @@
             "key": "1",
             "name": "Hauninen DiscGolfPark",
             "length": "18",
-            "par": "55"
+            "par": "55",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "69",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "51",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "87",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "105",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "65",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "96",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "81",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "97",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "79",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "166",
+                    "par": "4"
+                },
+                {
+                    "hole": "11",
+                    "distance": "84",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "67",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "85",
+                    "par": "3"
+                },
+                {
+                    "hole": "14",
+                    "distance": "61",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "91",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "71",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "53",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "61",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "2",
             "name": "Kerttula DiscGolfPark",
             "length": "10",
-            "par": "30"
+            "par": "30",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "75",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "72",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "49",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "68",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "50",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "58",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "28",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "32",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "31",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "73",
+                    "par": "3"
+                }
+            ]
         }
     ],
     "rusko": [
@@ -185,19 +1745,190 @@
             "key": "1",
             "name": "Päällistönmäen frisbeegolfrata",
             "length": "9",
-            "par": "28"
+            "par": "28",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "67",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "54",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "52",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "51",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "63",
+                    "par": "4"
+                },
+                {
+                    "hole": "6",
+                    "distance": "72",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "66",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "96",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "65",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "2",
             "name": "Rusko MultiGolfPark",
             "length": "6",
-            "par": "18"
+            "par": "18",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "55",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "45",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "60",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "70",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "80",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "85",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "3",
             "name": "Vahdon frisbeegolfrata",
             "length": "18",
-            "par": "57"
+            "par": "57",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "69",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "132",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "77",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "144",
+                    "par": "4"
+                },
+                {
+                    "hole": "5",
+                    "distance": "76",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "48",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "137",
+                    "par": "4"
+                },
+                {
+                    "hole": "8",
+                    "distance": "79",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "91",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "87",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "79",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "56",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "149",
+                    "par": "4"
+                },
+                {
+                    "hole": "14",
+                    "distance": "52",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "93",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "65",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "77",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "64",
+                    "par": "3"
+                }
+            ]
         }
     ],
     "salo": [
@@ -205,61 +1936,771 @@
             "key": "1",
             "name": "Hajalan frisbeegolfrata",
             "length": "9",
-            "par": "27"
+            "par": "27",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "80",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "75",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "63",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "43",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "83",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "73",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "63",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "43",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "63",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "2",
             "name": "Halikon frisbeegolfrata",
             "length": "18",
-            "par": "58"
+            "par": "58",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "55",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "42",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "114",
+                    "par": "4"
+                },
+                {
+                    "hole": "4",
+                    "distance": "70",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "51",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "55",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "114",
+                    "par": "4"
+                },
+                {
+                    "hole": "8",
+                    "distance": "65",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "60",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "126",
+                    "par": "4"
+                },
+                {
+                    "hole": "11",
+                    "distance": "52",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "70",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "45",
+                    "par": "3"
+                },
+                {
+                    "hole": "14",
+                    "distance": "50",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "70",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "70",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "57",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "145",
+                    "par": "4"
+                }
+            ]
         },
         {
             "key": "3",
             "name": "Inkere",
             "length": "18",
-            "par": "63"
+            "par": "63",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "84",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "148",
+                    "par": "4"
+                },
+                {
+                    "hole": "3",
+                    "distance": "133",
+                    "par": "4"
+                },
+                {
+                    "hole": "4",
+                    "distance": "84",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "155",
+                    "par": "4"
+                },
+                {
+                    "hole": "6",
+                    "distance": "90",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "125",
+                    "par": "4"
+                },
+                {
+                    "hole": "8",
+                    "distance": "65",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "185",
+                    "par": "4"
+                },
+                {
+                    "hole": "10",
+                    "distance": "115",
+                    "par": "4"
+                },
+                {
+                    "hole": "11",
+                    "distance": "190",
+                    "par": "5"
+                },
+                {
+                    "hole": "12",
+                    "distance": "90",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "105",
+                    "par": "3"
+                },
+                {
+                    "hole": "14",
+                    "distance": "111",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "76",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "109",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "118",
+                    "par": "4"
+                },
+                {
+                    "hole": "18",
+                    "distance": "104",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "4",
             "name": "Kiikalan Leijonarata",
             "length": "6",
-            "par": "18"
+            "par": "18",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "69",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "62",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "56",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "62",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "82",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "40",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "5",
             "name": "Kuusjoen Vähäjärvi",
             "length": "9",
-            "par": "31"
+            "par": "31",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "84",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "75",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "175",
+                    "par": "4"
+                },
+                {
+                    "hole": "4",
+                    "distance": "169",
+                    "par": "4"
+                },
+                {
+                    "hole": "5",
+                    "distance": "95",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "152",
+                    "par": "4"
+                },
+                {
+                    "hole": "7",
+                    "distance": "150",
+                    "par": "4"
+                },
+                {
+                    "hole": "8",
+                    "distance": "95",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "155",
+                    "par": "4"
+                }
+            ]
         },
         {
             "key": "6",
             "name": "Märynummen frisbeegolfrata",
             "length": "18",
-            "par": "62"
+            "par": "62",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "94",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "90",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "121",
+                    "par": "4"
+                },
+                {
+                    "hole": "4",
+                    "distance": "113",
+                    "par": "4"
+                },
+                {
+                    "hole": "5",
+                    "distance": "117",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "70",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "67",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "92",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "125",
+                    "par": "4"
+                },
+                {
+                    "hole": "10",
+                    "distance": "120",
+                    "par": "4"
+                },
+                {
+                    "hole": "11",
+                    "distance": "113",
+                    "par": "4"
+                },
+                {
+                    "hole": "12",
+                    "distance": "66",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "124",
+                    "par": "4"
+                },
+                {
+                    "hole": "14",
+                    "distance": "76",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "63",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "78",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "134",
+                    "par": "4"
+                },
+                {
+                    "hole": "18",
+                    "distance": "77",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "7",
             "name": "Pahkavuori",
             "length": "12",
-            "par": "38"
+            "par": "38",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "69",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "99",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "49",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "72",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "107",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "166",
+                    "par": "4"
+                },
+                {
+                    "hole": "7",
+                    "distance": "60",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "98",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "123",
+                    "par": "4"
+                },
+                {
+                    "hole": "10",
+                    "distance": "47",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "90",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "103",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "8",
             "name": "Perniö DiscGolfPark",
             "length": "18",
-            "par": "67"
+            "par": "67",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "65",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "92",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "59",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "38",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "79",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "207",
+                    "par": "5"
+                },
+                {
+                    "hole": "7",
+                    "distance": "237",
+                    "par": "5"
+                },
+                {
+                    "hole": "8",
+                    "distance": "194",
+                    "par": "5"
+                },
+                {
+                    "hole": "9",
+                    "distance": "150",
+                    "par": "4"
+                },
+                {
+                    "hole": "10",
+                    "distance": "240",
+                    "par": "5"
+                },
+                {
+                    "hole": "11",
+                    "distance": "83",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "137",
+                    "par": "4"
+                },
+                {
+                    "hole": "13",
+                    "distance": "229",
+                    "par": "5"
+                },
+                {
+                    "hole": "14",
+                    "distance": "152",
+                    "par": "4"
+                },
+                {
+                    "hole": "15",
+                    "distance": "58",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "84",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "77",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "94",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "9",
             "name": "Suomusjärvi DiscGolfPark",
             "length": "12",
-            "par": "36"
+            "par": "36",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "60",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "50",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "52",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "87",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "63",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "74",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "90",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "52",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "85",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "66",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "65",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "77",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "10",
             "name": "Tupurin frisbeegolfrata",
             "length": "18",
-            "par": "60"
+            "par": "60",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "74",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "91",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "109",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "109",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "136",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "172",
+                    "par": "4"
+                },
+                {
+                    "hole": "7",
+                    "distance": "222",
+                    "par": "5"
+                },
+                {
+                    "hole": "8",
+                    "distance": "103",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "108",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "67",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "148",
+                    "par": "4"
+                },
+                {
+                    "hole": "12",
+                    "distance": "98",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "193",
+                    "par": "4"
+                },
+                {
+                    "hole": "14",
+                    "distance": "79",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "95",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "95",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "134",
+                    "par": "4"
+                },
+                {
+                    "hole": "18",
+                    "distance": "102",
+                    "par": "3"
+                }
+            ]
         }
     ],
     "turku": [
@@ -267,73 +2708,797 @@
             "key": "1",
             "name": "Frantsin frisbeegolfrata",
             "length": "6",
-            "par": "18"
+            "par": "18",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "26",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "30",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "24",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "31",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "27",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "25",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "2",
             "name": "Harjattula",
             "length": "9",
-            "par": "27"
+            "par": "27",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "60",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "70",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "85",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "80",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "65",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "60",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "75",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "60",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "85",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "3",
             "name": "Lausteen frisbeegolfpuisto",
             "length": "24",
-            "par": "79"
+            "par": "79",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "134",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "118",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "73",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "110",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "216",
+                    "par": "4"
+                },
+                {
+                    "hole": "6",
+                    "distance": "99",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "209",
+                    "par": "4"
+                },
+                {
+                    "hole": "8",
+                    "distance": "136",
+                    "par": "4"
+                },
+                {
+                    "hole": "9",
+                    "distance": "56",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "172",
+                    "par": "4"
+                },
+                {
+                    "hole": "11",
+                    "distance": "101",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "85",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "90",
+                    "par": "3"
+                },
+                {
+                    "hole": "14",
+                    "distance": "170",
+                    "par": "4"
+                },
+                {
+                    "hole": "15",
+                    "distance": "85",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "211",
+                    "par": "4"
+                },
+                {
+                    "hole": "17",
+                    "distance": "118",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "55",
+                    "par": "3"
+                },
+                {
+                    "hole": "19",
+                    "distance": "183",
+                    "par": "4"
+                },
+                {
+                    "hole": "20",
+                    "distance": "109",
+                    "par": "3"
+                },
+                {
+                    "hole": "21",
+                    "distance": "90",
+                    "par": "3"
+                },
+                {
+                    "hole": "22",
+                    "distance": "95",
+                    "par": "3"
+                },
+                {
+                    "hole": "23",
+                    "distance": "126",
+                    "par": "3"
+                },
+                {
+                    "hole": "24",
+                    "distance": "100",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "4",
             "name": "Luolavuoren frisbeegolfrata - Sininen",
             "length": "18",
-            "par": "67"
+            "par": "67",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "123",
+                    "par": "4"
+                },
+                {
+                    "hole": "2",
+                    "distance": "215",
+                    "par": "5"
+                },
+                {
+                    "hole": "3",
+                    "distance": "100",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "145",
+                    "par": "4"
+                },
+                {
+                    "hole": "5",
+                    "distance": "88",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "109",
+                    "par": "4"
+                },
+                {
+                    "hole": "7",
+                    "distance": "179",
+                    "par": "5"
+                },
+                {
+                    "hole": "8",
+                    "distance": "119",
+                    "par": "4"
+                },
+                {
+                    "hole": "9",
+                    "distance": "80",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "101",
+                    "par": "4"
+                },
+                {
+                    "hole": "11",
+                    "distance": "122",
+                    "par": "4"
+                },
+                {
+                    "hole": "12",
+                    "distance": "122",
+                    "par": "4"
+                },
+                {
+                    "hole": "13",
+                    "distance": "163",
+                    "par": "4"
+                },
+                {
+                    "hole": "14",
+                    "distance": "79",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "100",
+                    "par": "4"
+                },
+                {
+                    "hole": "16",
+                    "distance": "81",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "83",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "70",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "5",
             "name": "Luolavuoren frisbeegolfrata - Oranssi",
             "length": "18",
-            "par": "53"
+            "par": "53",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "63",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "210",
+                    "par": "5"
+                },
+                {
+                    "hole": "3",
+                    "distance": "87",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "126",
+                    "par": "4"
+                },
+                {
+                    "hole": "5",
+                    "distance": "88",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "86",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "163",
+                    "par": "4"
+                },
+                {
+                    "hole": "8",
+                    "distance": "67",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "76",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "70",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "86",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "73",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "64",
+                    "par": "3"
+                },
+                {
+                    "hole": "14",
+                    "distance": "90",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "143",
+                    "par": "4"
+                },
+                {
+                    "hole": "16",
+                    "distance": "75",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "68",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "70",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "6",
             "name": "Maarian frisbeegolfrata",
             "length": "9",
-            "par": "27"
+            "par": "27",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "74",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "97",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "63",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "88",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "90",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "61",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "81",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "86",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "75",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "7",
             "name": "Norssin frisbeegolfrata",
             "length": "9",
-            "par": "27"
+            "par": "27",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "33",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "46",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "42",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "31",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "47",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "30",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "40",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "45",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "36",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "8",
             "name": "Pansio DiscGolfPark",
             "length": "14",
-            "par": "42"
+            "par": "42",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "57",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "53",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "58",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "83",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "59",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "68",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "53",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "40",
+                    "par": "4"
+                },
+                {
+                    "hole": "9",
+                    "distance": "75",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "51",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "59",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "77",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "72",
+                    "par": "3"
+                },
+                {
+                    "hole": "14",
+                    "distance": "56",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "9",
             "name": "Suvituuli DiscGolfPark",
             "length": "9",
-            "par": "27"
+            "par": "27",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "33",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "34",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "26",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "44",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "48",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "43",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "35",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "36",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "22",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "10",
             "name": "Urheilupuisto",
             "length": "9",
-            "par": "27"
+            "par": "27",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "35",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "32",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "31",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "31",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "30",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "31",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "21",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "27",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "22",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "11",
             "name": "Vepsän frisbeegolfrata",
             "length": "9",
-            "par": "27"
+            "par": "27",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "53",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "45",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "41",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "54",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "51",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "52",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "63",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "65",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "44",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "12",
             "name": "Vätin frisbeegolfrata",
             "length": "6",
-            "par": "18"
+            "par": "18",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "45",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "45",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "40",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "35",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "34",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "42",
+                    "par": "3"
+                }
+            ]
         }
     ],
     "uusikaupunki": [
@@ -341,43 +3506,662 @@
             "key": "1",
             "name": "Green Disc Golf",
             "length": "21",
-            "par": "71"
+            "par": "71",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "202",
+                    "par": "4"
+                },
+                {
+                    "hole": "2",
+                    "distance": "125",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "188",
+                    "par": "4"
+                },
+                {
+                    "hole": "4",
+                    "distance": "112",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "110",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "85",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "200",
+                    "par": "5"
+                },
+                {
+                    "hole": "8",
+                    "distance": "85",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "211",
+                    "par": "4"
+                },
+                {
+                    "hole": "10",
+                    "distance": "170",
+                    "par": "4"
+                },
+                {
+                    "hole": "11",
+                    "distance": "70",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "145",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "122",
+                    "par": "3"
+                },
+                {
+                    "hole": "14",
+                    "distance": "175",
+                    "par": "4"
+                },
+                {
+                    "hole": "15",
+                    "distance": "87",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "101",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "140",
+                    "par": "4"
+                },
+                {
+                    "hole": "18",
+                    "distance": "135",
+                    "par": "4"
+                },
+                {
+                    "hole": "19",
+                    "distance": "95",
+                    "par": "3"
+                },
+                {
+                    "hole": "20",
+                    "distance": "140",
+                    "par": "4"
+                },
+                {
+                    "hole": "21",
+                    "distance": "190",
+                    "par": "4"
+                }
+            ]
         },
         {
             "key": "2",
             "name": "Kalannin frisbeegolfrata",
             "length": "18",
-            "par": "56"
+            "par": "56",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "76",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "73",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "74",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "85",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "85",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "100",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "79",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "69",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "164",
+                    "par": "4"
+                },
+                {
+                    "hole": "10",
+                    "distance": "116",
+                    "par": "4"
+                },
+                {
+                    "hole": "11",
+                    "distance": "83",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "120",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "85",
+                    "par": "3"
+                },
+                {
+                    "hole": "14",
+                    "distance": "83",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "79",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "81",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "68",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "69",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "3",
             "name": "Lokalahden frisbeegolfrata",
             "length": "19",
-            "par": "59"
+            "par": "59",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "73",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "55",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "104",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "72",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "68",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "80",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "68",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "80",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "86",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "128",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "90",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "107",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "135",
+                    "par": "4"
+                },
+                {
+                    "hole": "14",
+                    "distance": "89",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "73",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "79",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "68",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "77",
+                    "par": "3"
+                },
+                {
+                    "hole": "19",
+                    "distance": "140",
+                    "par": "4"
+                }
+            ]
         },
         {
             "key": "4",
             "name": "Pyhämaa DiscGolfPark",
             "length": "18",
-            "par": "57"
+            "par": "57",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "52",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "47",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "57",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "151",
+                    "par": "4"
+                },
+                {
+                    "hole": "5",
+                    "distance": "105",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "65",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "146",
+                    "par": "4"
+                },
+                {
+                    "hole": "8",
+                    "distance": "69",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "176",
+                    "par": "4"
+                },
+                {
+                    "hole": "10",
+                    "distance": "117",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "64",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "77",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "81",
+                    "par": "3"
+                },
+                {
+                    "hole": "14",
+                    "distance": "103",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "88",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "86",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "62",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "59",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "5",
             "name": "SFC Rairanta frisbeegolfrata",
             "length": "18",
-            "par": "54"
+            "par": "54",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "62",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "52",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "52",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "80",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "90",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "60",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "100",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "63",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "90",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "60",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "70",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "57",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "50",
+                    "par": "3"
+                },
+                {
+                    "hole": "14",
+                    "distance": "35",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "65",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "52",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "75",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "50",
+                    "par": "3"
+                }
+            ]
         },
         {
             "key": "6",
             "name": "Sorvakon frisbeegolfrata",
             "length": "18",
-            "par": "56"
+            "par": "56",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "74",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "79",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "76",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "86",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "143",
+                    "par": "4"
+                },
+                {
+                    "hole": "6",
+                    "distance": "58",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "61",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "100",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "52",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "62",
+                    "par": "3"
+                },
+                {
+                    "hole": "11",
+                    "distance": "103",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "79",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "58",
+                    "par": "3"
+                },
+                {
+                    "hole": "14",
+                    "distance": "70",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "107",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "90",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "72",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "177",
+                    "par": "4"
+                }
+            ]
         },
         {
             "key": "7",
             "name": "Uimahallin frisbeegolfrata",
             "length": "9",
-            "par": "27"
+            "par": "27",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "45",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "55",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "61",
+                    "par": "3"
+                },
+                {
+                    "hole": "4",
+                    "distance": "74",
+                    "par": "3"
+                },
+                {
+                    "hole": "5",
+                    "distance": "69",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "38",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "72",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "94",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "66",
+                    "par": "3"
+                }
+            ]
         }
     ],
     "vehmaa": [
@@ -385,7 +4169,99 @@
             "key": "1",
             "name": "Vehmaa DiscGolfPark",
             "length": "18",
-            "par": "58"
+            "par": "58",
+            "holes": [
+                {
+                    "hole": "1",
+                    "distance": "76",
+                    "par": "3"
+                },
+                {
+                    "hole": "2",
+                    "distance": "95",
+                    "par": "3"
+                },
+                {
+                    "hole": "3",
+                    "distance": "181",
+                    "par": "4"
+                },
+                {
+                    "hole": "4",
+                    "distance": "168",
+                    "par": "4"
+                },
+                {
+                    "hole": "5",
+                    "distance": "65",
+                    "par": "3"
+                },
+                {
+                    "hole": "6",
+                    "distance": "85",
+                    "par": "3"
+                },
+                {
+                    "hole": "7",
+                    "distance": "83",
+                    "par": "3"
+                },
+                {
+                    "hole": "8",
+                    "distance": "108",
+                    "par": "3"
+                },
+                {
+                    "hole": "9",
+                    "distance": "115",
+                    "par": "3"
+                },
+                {
+                    "hole": "10",
+                    "distance": "161",
+                    "par": "4"
+                },
+                {
+                    "hole": "11",
+                    "distance": "84",
+                    "par": "3"
+                },
+                {
+                    "hole": "12",
+                    "distance": "101",
+                    "par": "3"
+                },
+                {
+                    "hole": "13",
+                    "distance": "148",
+                    "par": "4"
+                },
+                {
+                    "hole": "14",
+                    "distance": "94",
+                    "par": "3"
+                },
+                {
+                    "hole": "15",
+                    "distance": "91",
+                    "par": "3"
+                },
+                {
+                    "hole": "16",
+                    "distance": "63",
+                    "par": "3"
+                },
+                {
+                    "hole": "17",
+                    "distance": "74",
+                    "par": "3"
+                },
+                {
+                    "hole": "18",
+                    "distance": "57",
+                    "par": "3"
+                }
+            ]
         }
     ]
 }

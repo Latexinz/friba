@@ -74,7 +74,7 @@ function SetupScreen({navigation}: any) {
           <DataTable>
             <DataTable.Header>
               <DataTable.Title>Course</DataTable.Title>
-              <DataTable.Title numeric>Length</DataTable.Title>
+              <DataTable.Title numeric>Holes</DataTable.Title>
               <DataTable.Title numeric>Par</DataTable.Title>
             </DataTable.Header>
 
@@ -87,7 +87,9 @@ function SetupScreen({navigation}: any) {
                 let newParams = [];
                 for (let i = 0; i < parseInt(item.length); i++) {
                   let newItem = {
-                      "hole": String(i+1),
+                      "hole": item.holes[i].hole,
+                      "distance": item.holes[i].distance,
+                      "par": item.holes[i].par,
                       "score": 0
                    };
                    newParams.push(newItem);
