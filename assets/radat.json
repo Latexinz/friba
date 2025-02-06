@@ -18,6 +18,12 @@
         {
             "key": "1",
             "name": "Auran frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.6336",
+                    "lon": "22.6085"
+                }
+            ],
             "length": "9",
             "par": "27",
             "holes": [
@@ -73,6 +79,12 @@
         {
             "key": "1",
             "name": "Empon frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.3913",
+                    "lon": "22.3869"
+                }
+            ],
             "length": "4",
             "par": "12",
             "holes": [
@@ -101,6 +113,12 @@
         {
             "key": "2",
             "name": "Harvaluodon frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.3712",
+                    "lon": "22.5103"
+                }
+            ],
             "length": "9",
             "par": "27",
             "holes": [
@@ -154,6 +172,12 @@
         {
             "key": "3",
             "name": "Keskusliikuntapuisto",
+            "coordinates": [
+                {
+                    "lat": "60.4141",
+                    "lon": "22.3592"
+                }
+            ],
             "length": "12",
             "par": "39",
             "holes": [
@@ -222,6 +246,12 @@
         {
             "key": "4",
             "name": "Nunnan frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.4474",
+                    "lon": "22.4355"
+                }
+            ],
             "length": "18",
             "par": "55",
             "holes": [
@@ -320,6 +350,12 @@
         {
             "key": "5",
             "name": "Piikkiön koulukeskus",
+            "coordinates": [
+                {
+                    "lat": "60.4271",
+                    "lon": "22.5261"
+                }
+            ],
             "length": "5",
             "par": "15",
             "holes": [
@@ -353,6 +389,12 @@
         {
             "key": "6",
             "name": "Toivonlinnan frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.3852",
+                    "lon": "22.5302"
+                }
+            ],
             "length": "18",
             "par": "55",
             "holes": [
@@ -453,6 +495,12 @@
         {
             "key": "1",
             "name": "Ilmaristen frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.5082",
+                    "lon": "22.3792"
+                }
+            ],
             "length": "7",
             "par": "21",
             "holes": [
@@ -496,6 +544,12 @@
         {
             "key": "2",
             "name": "Liedon frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.4995",
+                    "lon": "22.4474"
+                }
+            ],
             "length": "18",
             "par": "55",
             "holes": [
@@ -594,6 +648,12 @@
         {
             "key": "3",
             "name": "Pahkamäen frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.5599",
+                    "lon": "22.4463"
+                }
+            ],
             "length": "6",
             "par": "18",
             "holes": [
@@ -632,6 +692,12 @@
         {
             "key": "4",
             "name": "Tarvasjoki DiscGolfPark",
+            "coordinates": [
+                {
+                    "lat": "60.5803",
+                    "lon": "22.7565"
+                }
+            ],
             "length": "9",
             "par": "27",
             "holes": [
@@ -685,6 +751,12 @@
         {
             "key": "5",
             "name": "Yliskulman frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.5327",
+                    "lon": "22.6153"
+                }
+            ],
             "length": "20",
             "par": "70",
             "holes": [
@@ -795,6 +867,12 @@
         {
             "key": "1",
             "name": "Askaisten koulun frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.5733",
+                    "lon": "21.8739"
+                }
+            ],
             "length": "5",
             "par": "15",
             "holes": [
@@ -828,6 +906,12 @@
         {
             "key": "2",
             "name": "Masku frisbeegolf",
+            "coordinates": [
+                {
+                    "lat": "60.5469",
+                    "lon": "22.1321"
+                }
+            ],
             "length": "18",
             "par": "60",
             "holes": [
@@ -928,6 +1012,12 @@
         {
             "key": "1",
             "name": "Haijainen DiscGolfPark",
+            "coordinates": [
+                {
+                    "lat": "60.4407",
+                    "lon": "22.0048"
+                }
+            ],
             "length": "18",
             "par": "59",
             "holes": [
@@ -1026,6 +1116,12 @@
         {
             "key": "2",
             "name": "Iso Maisaari",
+            "coordinates": [
+                {
+                    "lat": "60.3312",
+                    "lon": "21.8932"
+                }
+            ],
             "length": "10",
             "par": "30",
             "holes": [
@@ -1084,6 +1180,12 @@
         {
             "key": "3",
             "name": "Kultaranta Resort",
+            "coordinates": [
+                {
+                    "lat": "60.4561",
+                    "lon": "21.9495"
+                }
+            ],
             "length": "5",
             "par": "15",
             "holes": [
@@ -1117,6 +1219,12 @@
         {
             "key": "4",
             "name": "Rymättylän koulun frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.3740",
+                    "lon": "21.9546"
+                }
+            ],
             "length": "5",
             "par": "15",
             "holes": [
@@ -1150,6 +1258,12 @@
         {
             "key": "5",
             "name": "Suopelto DiscGolfPark",
+            "coordinates": [
+                {
+                    "lat": "60.4868",
+                    "lon": "22.0560"
+                }
+            ],
             "length": "18",
             "par": "55",
             "holes": [
@@ -1250,6 +1364,12 @@
         {
             "key": "1",
             "name": "Mikko Rantasen frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.6088",
+                    "lon": "22.0729"
+                }
+            ],
             "length": "18",
             "par": "57",
             "holes": [
@@ -1348,6 +1468,12 @@
         {
             "key": "2",
             "name": "Valpperin frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.6664",
+                    "lon": "22.2679"
+                }
+            ],
             "length": "18",
             "par": "59",
             "holes": [
@@ -1448,6 +1574,12 @@
         {
             "key": "1",
             "name": "Paimio DiscGolfPark",
+            "coordinates": [
+                {
+                    "lat": "60.4563",
+                    "lon": "22.7217"
+                }
+            ],
             "length": "18",
             "par": "58",
             "holes": [
@@ -1546,6 +1678,12 @@
         {
             "key": "2",
             "name": "Paimio MultiGolfPark",
+            "coordinates": [
+                {
+                    "lat": "60.4558",
+                    "lon": "22.7229"
+                }
+            ],
             "length": "6",
             "par": "18",
             "holes": [
@@ -1586,6 +1724,12 @@
         {
             "key": "1",
             "name": "Hauninen DiscGolfPark",
+            "coordinates": [
+                {
+                    "lat": "60.4993",
+                    "lon": "22.2047"
+                }
+            ],
             "length": "18",
             "par": "55",
             "holes": [
@@ -1684,6 +1828,12 @@
         {
             "key": "2",
             "name": "Kerttula DiscGolfPark",
+            "coordinates": [
+                {
+                    "lat": "60.4936",
+                    "lon": "22.1571"
+                }
+            ],
             "length": "10",
             "par": "30",
             "holes": [
@@ -1744,6 +1894,12 @@
         {
             "key": "1",
             "name": "Päällistönmäen frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.5360",
+                    "lon": "22.2466"
+                }
+            ],
             "length": "9",
             "par": "28",
             "holes": [
@@ -1797,6 +1953,12 @@
         {
             "key": "2",
             "name": "Rusko MultiGolfPark",
+            "coordinates": [
+                {
+                    "lat": "60.5460",
+                    "lon": "22.2187"
+                }
+            ],
             "length": "6",
             "par": "18",
             "holes": [
@@ -1835,6 +1997,12 @@
         {
             "key": "3",
             "name": "Vahdon frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.6208",
+                    "lon": "22.3091"
+                }
+            ],
             "length": "18",
             "par": "57",
             "holes": [
@@ -1935,6 +2103,12 @@
         {
             "key": "1",
             "name": "Hajalan frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.4106",
+                    "lon": "22.9082"
+                }
+            ],
             "length": "9",
             "par": "27",
             "holes": [
@@ -1988,6 +2162,12 @@
         {
             "key": "2",
             "name": "Halikon frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.4123",
+                    "lon": "23.0877"
+                }
+            ],
             "length": "18",
             "par": "58",
             "holes": [
@@ -2086,6 +2266,12 @@
         {
             "key": "3",
             "name": "Inkere",
+            "coordinates": [
+                {
+                    "lat": "60.4312",
+                    "lon": "23.2637"
+                }
+            ],
             "length": "18",
             "par": "63",
             "holes": [
@@ -2184,6 +2370,12 @@
         {
             "key": "4",
             "name": "Kiikalan Leijonarata",
+            "coordinates": [
+                {
+                    "lat": "60.4570",
+                    "lon": "23.5716"
+                }
+            ],
             "length": "6",
             "par": "18",
             "holes": [
@@ -2222,6 +2414,12 @@
         {
             "key": "5",
             "name": "Kuusjoen Vähäjärvi",
+            "coordinates": [
+                {
+                    "lat": "60.5851",
+                    "lon": "23.2357"
+                }
+            ],
             "length": "9",
             "par": "31",
             "holes": [
@@ -2275,6 +2473,12 @@
         {
             "key": "6",
             "name": "Märynummen frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.4451",
+                    "lon": "23.0530"
+                }
+            ],
             "length": "18",
             "par": "62",
             "holes": [
@@ -2373,6 +2577,12 @@
         {
             "key": "7",
             "name": "Pahkavuori",
+            "coordinates": [
+                {
+                    "lat": "60.3847",
+                    "lon": "23.1522"
+                }
+            ],
             "length": "12",
             "par": "38",
             "holes": [
@@ -2441,6 +2651,12 @@
         {
             "key": "8",
             "name": "Perniö DiscGolfPark",
+            "coordinates": [
+                {
+                    "lat": "60.2094",
+                    "lon": "23.1354"
+                }
+            ],
             "length": "18",
             "par": "67",
             "holes": [
@@ -2539,6 +2755,12 @@
         {
             "key": "9",
             "name": "Suomusjärvi DiscGolfPark",
+            "coordinates": [
+                {
+                    "lat": "60.3788",
+                    "lon": "23.6001"
+                }
+            ],
             "length": "12",
             "par": "36",
             "holes": [
@@ -2607,6 +2829,12 @@
         {
             "key": "10",
             "name": "Tupurin frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.3858",
+                    "lon": "23.1831"
+                }
+            ],
             "length": "18",
             "par": "60",
             "holes": [
@@ -2707,6 +2935,12 @@
         {
             "key": "1",
             "name": "Frantsin frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.4699",
+                    "lon": "22.3150"
+                }
+            ],
             "length": "6",
             "par": "18",
             "holes": [
@@ -2745,6 +2979,12 @@
         {
             "key": "2",
             "name": "Harjattula",
+            "coordinates": [
+                {
+                    "lat": "60.3715",
+                    "lon": "22.2907"
+                }
+            ],
             "length": "9",
             "par": "27",
             "holes": [
@@ -2798,6 +3038,12 @@
         {
             "key": "3",
             "name": "Lausteen frisbeegolfpuisto",
+            "coordinates": [
+                {
+                    "lat": "60.4285",
+                    "lon": "22.3472"
+                }
+            ],
             "length": "24",
             "par": "79",
             "holes": [
@@ -2926,6 +3172,12 @@
         {
             "key": "4",
             "name": "Luolavuoren frisbeegolfrata - Sininen",
+            "coordinates": [
+                {
+                    "lat": "60.4284",
+                    "lon": "22.2864"
+                }
+            ],
             "length": "18",
             "par": "67",
             "holes": [
@@ -3024,6 +3276,12 @@
         {
             "key": "5",
             "name": "Luolavuoren frisbeegolfrata - Oranssi",
+            "coordinates": [
+                {
+                    "lat": "60.4284",
+                    "lon": "22.2864"
+                }
+            ],
             "length": "18",
             "par": "53",
             "holes": [
@@ -3122,6 +3380,12 @@
         {
             "key": "6",
             "name": "Maarian frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.5358",
+                    "lon": "22.3474"
+                }
+            ],
             "length": "9",
             "par": "27",
             "holes": [
@@ -3175,6 +3439,12 @@
         {
             "key": "7",
             "name": "Norssin frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.4486",
+                    "lon": "22.3572"
+                }
+            ],
             "length": "9",
             "par": "27",
             "holes": [
@@ -3228,6 +3498,12 @@
         {
             "key": "8",
             "name": "Pansio DiscGolfPark",
+            "coordinates": [
+                {
+                    "lat": "60.4517",
+                    "lon": "22.1601"
+                }
+            ],
             "length": "14",
             "par": "42",
             "holes": [
@@ -3306,6 +3582,12 @@
         {
             "key": "9",
             "name": "Suvituuli DiscGolfPark",
+            "coordinates": [
+                {
+                    "lat": "60.3897",
+                    "lon": "22.2228"
+                }
+            ],
             "length": "9",
             "par": "27",
             "holes": [
@@ -3359,6 +3641,12 @@
         {
             "key": "10",
             "name": "Urheilupuisto",
+            "coordinates": [
+                {
+                    "lat": "60.4417",
+                    "lon": "22.2611"
+                }
+            ],
             "length": "9",
             "par": "27",
             "holes": [
@@ -3412,6 +3700,12 @@
         {
             "key": "11",
             "name": "Vepsän frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.3745",
+                    "lon": "22.0771"
+                }
+            ],
             "length": "9",
             "par": "27",
             "holes": [
@@ -3465,6 +3759,12 @@
         {
             "key": "12",
             "name": "Vätin frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.4655",
+                    "lon": "22.2634"
+                }
+            ],
             "length": "6",
             "par": "18",
             "holes": [
@@ -3505,6 +3805,12 @@
         {
             "key": "1",
             "name": "Green Disc Golf",
+            "coordinates": [
+                {
+                    "lat": "60.8284",
+                    "lon": "21.5816"
+                }
+            ],
             "length": "21",
             "par": "71",
             "holes": [
@@ -3618,6 +3924,12 @@
         {
             "key": "2",
             "name": "Kalannin frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.8183",
+                    "lon": "21.5629"
+                }
+            ],
             "length": "18",
             "par": "56",
             "holes": [
@@ -3716,6 +4028,12 @@
         {
             "key": "3",
             "name": "Lokalahden frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.6906",
+                    "lon": "21.4607"
+                }
+            ],
             "length": "19",
             "par": "59",
             "holes": [
@@ -3819,6 +4137,12 @@
         {
             "key": "4",
             "name": "Pyhämaa DiscGolfPark",
+            "coordinates": [
+                {
+                    "lat": "60.9536",
+                    "lon": "21.3670"
+                }
+            ],
             "length": "18",
             "par": "57",
             "holes": [
@@ -3917,6 +4241,12 @@
         {
             "key": "5",
             "name": "SFC Rairanta frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.7620",
+                    "lon": "21.4256"
+                }
+            ],
             "length": "18",
             "par": "54",
             "holes": [
@@ -4015,6 +4345,12 @@
         {
             "key": "6",
             "name": "Sorvakon frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.7931",
+                    "lon": "21.4060"
+                }
+            ],
             "length": "18",
             "par": "56",
             "holes": [
@@ -4113,6 +4449,12 @@
         {
             "key": "7",
             "name": "Uimahallin frisbeegolfrata",
+            "coordinates": [
+                {
+                    "lat": "60.8069",
+                    "lon": "21.4053"
+                }
+            ],
             "length": "9",
             "par": "27",
             "holes": [
@@ -4168,6 +4510,12 @@
         {
             "key": "1",
             "name": "Vehmaa DiscGolfPark",
+            "coordinates": [
+                {
+                    "lat": "60.6871",
+                    "lon": "21.6614"
+                }
+            ],
             "length": "18",
             "par": "58",
             "holes": [

@@ -55,6 +55,7 @@ function GameScreen({navigation, route}: any) {
 
     usePreventRemove(true, () => {});
 
+    //This updates the score for a hole whenever the user presses either + or -
     const updateScore = (hole: string, score: number) => {
         setItems(
             items.map((item: any) => {
@@ -120,23 +121,24 @@ function GameScreen({navigation, route}: any) {
             <View style={styles.screen}>
                 <View style={styles.option}>
                     <Text style={styles.settingText}>
-                        {name.replaceAll('_', ' ') + '\n'}
-                        Score: {items.reduce((n: number, {score}: any) => n + score, 0)} / {par}
+                        {name + '\n'}
+                        Score: {items.reduce((n: number, {score}: any) => n + score, 0)} / {par+'\t'}  {isValid ? items.reduce((n: number, {score}: any) => n + score, 0) - parseInt(par) : ''}
                     </Text>
                 </View>
                 <View style={styles.option}>
                     <DataTable>
                         <DataTable.Header>
                             <DataTable.Title textStyle={{fontSize:20, color:'black'}}>Hole</DataTable.Title>
-                            <DataTable.Title textStyle={{fontSize:20, color:'black'}}>Par</DataTable.Title>
+                            <DataTable.Title textStyle={{fontSize:20, color:'black'}}>Dist</DataTable.Title>
                             <DataTable.Title style={{justifyContent: 'center'}} textStyle={{fontSize:20, color:'black'}}>Score</DataTable.Title>
+                            <DataTable.Title textStyle={{fontSize:20, color:'black'}} numeric>Par</DataTable.Title>
                         </DataTable.Header>
 
-                        <ScrollView style={{height:'75%'}}>
+                        <ScrollView style={{height:'75%'}} persistentScrollbar={true}>
                             {items.slice(from, to).map((item: any) => (
                                 <DataTable.Row key={item.hole}>
                                 <DataTable.Cell textStyle={{fontSize:20, color:'black'}}>{item.hole}</DataTable.Cell>
-                                <DataTable.Cell textStyle={{fontSize:20, color:'black'}}>{item.par}</DataTable.Cell>
+                                <DataTable.Cell textStyle={{fontSize:20, color:'black'}}>{item.distance}m</DataTable.Cell>
                                 <DataTable.Cell style={{justifyContent: 'center', alignItems:'center'}} textStyle={{fontSize:40}}>
                                     <Pressable onPressIn={() => {
                                         if (item.score > 0) {
@@ -175,6 +177,7 @@ function GameScreen({navigation, route}: any) {
                                         size={30}/>
                                     </Pressable>
                                 </DataTable.Cell>
+                                <DataTable.Cell textStyle={{fontSize:40, color:'black'}} numeric>{item.par}</DataTable.Cell>
                                 </DataTable.Row>
                             ))}
                         </ScrollView>
@@ -215,7 +218,7 @@ function GameScreen({navigation, route}: any) {
                                                     const upload = gdrive.files.newMultipartUploader()
                                                     .setData(base64.encode(JSON.stringify(items)))
                                                     .setRequestBody({
-                                                        name: route.params["time"] + '_' + name +'.json',
+                                                        name: route.params["time"] + '_' + name.replaceAll(' ', '_') +'.json',
                                                         parents: [APP_DATA_FOLDER_ID]
                                                     }).execute();
 

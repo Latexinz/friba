@@ -2,7 +2,8 @@ import React from "react";
 import {
   Alert, 
   StatusBar, 
-  View
+  View,
+  Appearance
 } from "react-native";
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -36,6 +37,7 @@ export default function app() {
   const [initialState, setInitialState] = React.useState();
 
   React.useEffect(() => {
+    Appearance.setColorScheme('light');
     //Restore app state if closed mid game
     const restoreState = async () => {
       try {
