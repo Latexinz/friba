@@ -9,7 +9,8 @@ import {
     Divider,
     Text,
     Icon,
-    ActivityIndicator
+    ActivityIndicator,
+    Switch,
 } from 'react-native-paper';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
@@ -18,12 +19,14 @@ import {
   isErrorWithCode
 } from "@react-native-google-signin/google-signin";
 import { GDrive, APP_DATA_FOLDER_ID } from '@robinbobin/react-native-google-drive-api-wrapper';
+import { useTheme } from "@react-navigation/native";
 
-import { HapticFeedback } from "../assets/Settings";
-import { styles, colors } from "../assets/Styles";
+import { HapticFeedback, ThemeContext } from "../assets/Settings";
+import { styles, appColors } from "../assets/Styles";
 
 
 const USER_KEY = 'USER_STATE';
+const THEME_KEY = 'THEME_STATE';
 
 function SettingsScreen({navigation}: any) {
 
@@ -32,6 +35,10 @@ function SettingsScreen({navigation}: any) {
 
   const [isReady, setIsReady] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
+
+  const [switchOn, setSwitchOn] = React.useState(false);
+  const { theme, setTheme } = React.useContext(ThemeContext);
+  const { colors } = useTheme();
 
   const gdrive = new GDrive();
 
@@ -60,7 +67,7 @@ function SettingsScreen({navigation}: any) {
   if (loading) {
     return (
       <View style={{paddingVertical:'100%'}}>
-        <ActivityIndicator size={70} color={colors.fribaGreen}/>
+        <ActivityIndicator size={70} color={appColors.fribaGreen}/>
       </View>
     );
   }
@@ -68,20 +75,28 @@ function SettingsScreen({navigation}: any) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.screen}>
-        <Text style={styles.categoryText}>
+        <Text style={{fontSize: 24, paddingTop: '2%', color: colors.text}}>
           General
         </Text>
         <Divider bold/>
         <View style={styles.option}>
-          <Text style={styles.settingText}>
+          <Text style={{fontSize: 18, color: colors.text}}>
             <Icon 
-              source='volume-high'
-              color={colors.fribaGrey}
+              source={theme === 'Light' ? 'moon-new' : 'moon-waning-crescent'}
+              color={appColors.fribaGrey}
               size={18}/>
-            {'\t'}Volume
+            {'\t'}Theme
           </Text>
+          <Switch 
+            value={theme === 'Light' ? false : true} 
+            color={appColors.fribaGreen}
+            onValueChange={() => {
+              AsyncStorage.setItem(THEME_KEY, theme === 'Light' ? 'Dark' : 'Light');
+              setTheme(theme === 'Light' ? 'Dark' : 'Light');
+              setSwitchOn(!switchOn);
+              }}/>
         </View>
-        <Text style={styles.categoryText}>
+        <Text style={{fontSize: 24, paddingTop: '2%', color: colors.text}}>
           Account
         </Text>
         <Divider bold/>
@@ -141,22 +156,22 @@ function SettingsScreen({navigation}: any) {
             }
         }}>
           <View style={styles.option}>
-            <Text style={styles.settingText}>
+            <Text style={{fontSize: 18, color: colors.text}}>
               <Icon 
                 source='google'
-                color={colors.fribaGrey}
+                color={appColors.fribaGrey}
                 size={18}/>
               {'\t'}Google login
             </Text>
-            <Text style={styles.settingText}>
+            <Text style={{fontSize: 18, color: colors.text}}>
               <Icon 
                 source={loggedIn ? 'check-circle-outline' : 'close-circle-outline'}
-                color={loggedIn ? colors.fribaGreen : colors.fribaRed}
+                color={loggedIn ? appColors.fribaGreen : appColors.fribaRed}
                 size={24}/>
             </Text>
           </View>
           <View style={styles.description}>
-            <Text style={styles.descriptionText}>
+            <Text style={{fontSize: 12, color: colors.text}}>
               {loggedIn ? user : null}
             </Text>
           </View>
@@ -184,17 +199,17 @@ function SettingsScreen({navigation}: any) {
           ]);
         }}>
           <View style={styles.option}>
-            <Text style={styles.settingText}>
+            <Text style={{fontSize: 18, color: colors.text}}>
               <Icon 
                 source='delete'
-                color={colors.fribaGrey}
+                color={appColors.fribaGrey}
                 size={18}/>
               {'\t'}Delete saved data
             </Text>
           </View>
         </Pressable>
         <View style={styles.description}>
-          <Text style={styles.descriptionText}>
+          <Text style={{fontSize: 12, color: colors.text}}>
             Deletes all saved games from Google Drive
           </Text>
         </View>

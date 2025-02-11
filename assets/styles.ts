@@ -1,5 +1,33 @@
 import { StyleSheet } from "react-native";
+import { DefaultTheme } from '@react-navigation/native';
 
+
+export const themes = {
+    light: {
+        dark: false,
+        colors: {
+            primary: 'rgb(68, 158, 72)',
+            background: 'rgb(242, 242, 242)',
+            card: 'rgb(255, 255, 255)',
+            text: 'rgb(28, 28, 30)',
+            border: 'rgb(199, 199, 204)',
+            notification: 'rgb(255, 69, 58)',
+        },
+        fonts: DefaultTheme.fonts,
+    },
+    dark: {
+        dark: true,
+        colors: {
+            primary: 'rgb(68, 158, 72)',
+            background: 'rgb(28, 28, 30)',
+            card: 'rgb(50, 50, 50)',
+            text: 'rgb(242, 242, 242)',
+            border: 'rgb(199, 199, 204)',
+            notification: 'rgb(255, 69, 58)',
+        },
+        fonts: DefaultTheme.fonts,
+    }
+};
 
 export const styles = StyleSheet.create({
     container: {
@@ -9,19 +37,6 @@ export const styles = StyleSheet.create({
     screen: {
         paddingHorizontal:'5%',
         paddingVertical:'5%',
-    },
-    categoryText: {
-        color:'#8c9096',
-        fontSize: 24,
-        paddingTop: '2%',
-    },
-    settingText: {
-        color:'black',
-        fontSize: 18
-    },
-    descriptionText: {
-        color:'black',
-        fontSize: 12
     },
     option: {
         flexDirection:'row',
@@ -41,25 +56,9 @@ export const styles = StyleSheet.create({
         justifyContent:'space-between',
         alignItems:'center',
     },
-    dropdown: {
-        height: 50,
-        width: '75%',
-        borderColor: 'gray',
-        borderWidth: 0.5,
-        borderRadius: 8,
-        paddingHorizontal: 8,
-    },
-    dropdownS: {
-        height: 50,
-        width: '100%',
-        borderColor: 'gray',
-        borderWidth: 0.5,
-        borderRadius: 8,
-        paddingHorizontal: 8,
-    },
 });
 
-export const colors = {
+export const appColors = {
     fribaGreen: '#449e48',
     fribaGrey: '#8c9096',
     fribaRed: '#d2042d',

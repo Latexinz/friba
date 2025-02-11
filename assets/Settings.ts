@@ -1,6 +1,6 @@
-import {
-    Vibration
-} from "react-native";
+import React from "react";
+import {Vibration} from "react-native";
+
 
 export function HapticFeedback() {
 
@@ -8,3 +8,5 @@ export function HapticFeedback() {
         Vibration.vibrate(20)
     );
 };
+
+export const ThemeContext = React.createContext('Light');

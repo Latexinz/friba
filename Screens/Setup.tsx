@@ -16,9 +16,10 @@ import {
   Icon
 } from 'react-native-paper';
 import { Dropdown } from 'react-native-element-dropdown';
+import { useTheme } from "@react-navigation/native";
 
 import { HapticFeedback } from "../assets/Settings";
-import { styles, colors } from "../assets/Styles";
+import { styles, appColors } from "../assets/Styles";
 import * as courseData from '../assets/radat.json';
 
 
@@ -60,20 +61,31 @@ function SetupScreen({navigation}: any) {
   const [name, setName] = React.useState('');
   const [par, setPar] = React.useState('');
 
+  const { colors } = useTheme();
+
   return (
     <Portal.Host>
       <SafeAreaView style={styles.container}>
         <View style={styles.screen}>
           <View style={styles.option}>
-            <Text style={styles.settingText}>
+            <Text style={{fontSize: 18, color: colors.text}}>
               Location
             </Text>
             <Dropdown
-              style={styles.dropdown}
-              placeholderStyle={styles.settingText}
-              itemTextStyle={styles.settingText}
-              selectedTextStyle={styles.settingText}
-              inputSearchStyle={styles.settingText}
+              style={{
+                height: 50,
+                width: '75%',
+                borderColor: 'gray',
+                borderWidth: 0.5,
+                borderRadius: 8,
+                paddingHorizontal: 8,
+              }}
+              containerStyle={{backgroundColor:colors.background}}
+              activeColor={appColors.fribaBlue}
+              placeholderStyle={{fontSize: 18, color: colors.text}}
+              itemTextStyle={{fontSize: 18, color: colors.text}}
+              selectedTextStyle={{fontSize: 18, color: colors.text}}
+              inputSearchStyle={{fontSize: 18, color: colors.text}}
               searchPlaceholder='search...'
               data={courseData.locations}
               //autoScroll={false}
@@ -90,8 +102,8 @@ function SetupScreen({navigation}: any) {
           <View style={styles.option}>
             <DataTable>
               <DataTable.Header>
-                <DataTable.Title>Course</DataTable.Title>
-                <DataTable.Title numeric>Holes</DataTable.Title>
+                <DataTable.Title textStyle={{color:colors.text}}>Course</DataTable.Title>
+                <DataTable.Title textStyle={{color:colors.text}} numeric>Holes</DataTable.Title>
               </DataTable.Header>
 
               {items.slice(from, to).map((item: any) => (
@@ -133,8 +145,8 @@ function SetupScreen({navigation}: any) {
                   setReady(false);
                   setVisible(true);
                 }}>
-                  <DataTable.Cell>{item.name}</DataTable.Cell>
-                  <DataTable.Cell numeric>{item.length}</DataTable.Cell>
+                  <DataTable.Cell textStyle={{color:colors.text}}>{item.name}</DataTable.Cell>
+                  <DataTable.Cell textStyle={{color:colors.text}} numeric>{item.length}</DataTable.Cell>
                 </DataTable.Row>
               ))}
 
@@ -157,12 +169,12 @@ function SetupScreen({navigation}: any) {
               onDismiss={() => setVisible(false)}
               contentContainerStyle={{
                 alignSelf:'center',
-                backgroundColor:'white',
+                backgroundColor:colors.background,
                 padding:'5%',
                 width:'90%',
               }}>
               <View style={styles.option}>
-                <Text style={{color:colors.fribaGrey, fontSize: 22,}}>
+                <Text style={{color:appColors.fribaGrey, fontSize: 22,}}>
                   {name === undefined ? 'No course set' : name}
                 </Text>
                 <Pressable 
@@ -172,13 +184,13 @@ function SetupScreen({navigation}: any) {
                   }}>
                     <Icon 
                     source='map'
-                    color={colors.fribaBlue}
+                    color={appColors.fribaBlue}
                     size={28}/>
                 </Pressable>
               </View>
               <Divider bold/> 
               <View style={styles.option}>
-                <Text style={styles.settingText}>
+                <Text style={{fontSize: 18, color: colors.text}}>
                   Holes: {courseInfo === undefined ? 'N/A' : JSON.stringify(courseInfo.length).replaceAll('"', '')}
                   {'\n'}
                   Par: {courseInfo === undefined ? 'N/A' : JSON.stringify(courseInfo.par).replaceAll('"', '')}
@@ -186,19 +198,19 @@ function SetupScreen({navigation}: any) {
               </View>
               <Divider bold/>
               <View style={styles.checkbox}>
-                <Text style={styles.settingText}>
+                <Text style={{fontSize: 18, color: colors.text}}>
                   (Optional) 10 throws max
                 </Text>
                 <Checkbox
                   status={max ? 'checked' : 'unchecked'}
-                  color={colors.fribaGreen}
+                  color={appColors.fribaGreen}
                   onPress={() => {
                     HapticFeedback();
                     setMax(!max);
                 }}/>
               </View>
               <View style={styles.description}>
-                <Text style={styles.descriptionText}>
+                <Text style={{fontSize: 12, color: colors.text}}>
                   Limit number of throws per hole to 10
                 </Text>
               </View> 
@@ -206,7 +218,7 @@ function SetupScreen({navigation}: any) {
               <View style={{paddingHorizontal:'25%', paddingTop:'5%'}}>
                 <Button
                   mode='contained'
-                  buttonColor={colors.fribaGreen}
+                  buttonColor={appColors.fribaGreen}
                   disabled={ready}
                   onPress={() => {
                     HapticFeedback();

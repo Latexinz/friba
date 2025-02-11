@@ -7,7 +7,7 @@ import { Button } from 'react-native-paper';
 import { usePreventRemove } from '@react-navigation/native';
 
 import { HapticFeedback } from "../assets/Settings";
-import { styles, colors } from "../assets/Styles";
+import { styles, appColors } from "../assets/Styles";
 
 
 function HomeScreen({navigation}: any) {
@@ -23,7 +23,7 @@ function HomeScreen({navigation}: any) {
         }}>
         <Button
           mode='contained'
-          buttonColor={colors.fribaGreen}
+          buttonColor={appColors.fribaGreen}
           onPress={() => {
             HapticFeedback();
             navigation.navigate('SetupScreen');
@@ -38,7 +38,7 @@ function HomeScreen({navigation}: any) {
       }}>
         <Button
           mode='contained'
-          buttonColor={colors.fribaGreen}
+          buttonColor={appColors.fribaGreen}
           onPress={() => {
             HapticFeedback();
             navigation.navigate('ScoreScreen');

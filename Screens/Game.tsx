@@ -13,14 +13,14 @@ import {
     Button,
     ActivityIndicator 
 } from "react-native-paper";
-import { usePreventRemove } from '@react-navigation/native';
+import { usePreventRemove, useTheme } from '@react-navigation/native';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import base64 from 'react-native-base64';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { GDrive, APP_DATA_FOLDER_ID } from '@robinbobin/react-native-google-drive-api-wrapper';
 
 import { HapticFeedback } from "../assets/Settings";
-import { colors, styles } from "../assets/Styles";
+import { appColors, styles } from "../assets/Styles";
 
 
 const PERSISTENCE_KEY = 'NAVIGATION_STATE_V1';
@@ -52,6 +52,8 @@ function GameScreen({navigation, route}: any) {
     React.useEffect(() => {
         setPage(0);
     }, [itemsPerPage]);
+
+    const { colors } = useTheme();
 
     usePreventRemove(true, () => {});
 
@@ -111,7 +113,7 @@ function GameScreen({navigation, route}: any) {
     if (!isReady) {
         return (
             <View style={{paddingVertical:'100%'}}>
-                <ActivityIndicator size={70} color={colors.fribaGreen}/>
+                <ActivityIndicator size={70} color={appColors.fribaGreen}/>
             </View>
         );
       }
@@ -120,7 +122,7 @@ function GameScreen({navigation, route}: any) {
         <SafeAreaView style={styles.container}>
             <View style={styles.screen}>
                 <View style={styles.option}>
-                    <Text style={styles.settingText}>
+                    <Text style={{fontSize: 18, color: colors.text}}>
                         {name + '\n'}
                         Score: {items.reduce((n: number, {score}: any) => n + score, 0)} / {par+'\t'}  {isValid ? items.reduce((n: number, {score}: any) => n + score, 0) - parseInt(par) : ''}
                     </Text>
@@ -128,18 +130,18 @@ function GameScreen({navigation, route}: any) {
                 <View style={styles.option}>
                     <DataTable>
                         <DataTable.Header>
-                            <DataTable.Title textStyle={{fontSize:20, color:'black'}}>Hole</DataTable.Title>
-                            <DataTable.Title textStyle={{fontSize:20, color:'black'}}>Dist</DataTable.Title>
-                            <DataTable.Title style={{justifyContent: 'center'}} textStyle={{fontSize:20, color:'black'}}>Score</DataTable.Title>
-                            <DataTable.Title textStyle={{fontSize:20, color:'black'}} numeric>Par</DataTable.Title>
+                            <DataTable.Title textStyle={{fontSize:20, color:colors.text}}>Hole</DataTable.Title>
+                            <DataTable.Title textStyle={{fontSize:20, color:colors.text}}>Dist</DataTable.Title>
+                            <DataTable.Title style={{justifyContent: 'center'}} textStyle={{fontSize:20, color:colors.text}}>Score</DataTable.Title>
+                            <DataTable.Title textStyle={{fontSize:20, color:colors.text}} numeric>Par</DataTable.Title>
                         </DataTable.Header>
 
                         <ScrollView style={{height:'75%'}} persistentScrollbar={true}>
                             {items.slice(from, to).map((item: any) => (
                                 <DataTable.Row key={item.hole}>
-                                <DataTable.Cell textStyle={{fontSize:20, color:'black'}}>{item.hole}</DataTable.Cell>
-                                <DataTable.Cell textStyle={{fontSize:20, color:'black'}}>{item.distance}m</DataTable.Cell>
-                                <DataTable.Cell style={{justifyContent: 'center', alignItems:'center'}} textStyle={{fontSize:40}}>
+                                <DataTable.Cell textStyle={{fontSize:20, color:colors.text}}>{item.hole}</DataTable.Cell>
+                                <DataTable.Cell textStyle={{fontSize:20, color:colors.text}}>{item.distance}m</DataTable.Cell>
+                                <DataTable.Cell style={{justifyContent: 'center', alignItems:'center'}} textStyle={{fontSize:40, color:colors.text}}>
                                     <Pressable onPressIn={() => {
                                         if (item.score > 0) {
                                             updateScore(item.hole, item.score-1);
@@ -152,7 +154,7 @@ function GameScreen({navigation, route}: any) {
                                     }}>
                                         <Icon 
                                         source='minus-circle'
-                                        color={colors.fribaGrey}
+                                        color={appColors.fribaGrey}
                                         size={30}/>
                                     </Pressable>
                                     {item.score}
@@ -173,11 +175,11 @@ function GameScreen({navigation, route}: any) {
                                     }}>
                                         <Icon 
                                         source='plus-circle'
-                                        color={colors.fribaGrey}
+                                        color={appColors.fribaGrey}
                                         size={30}/>
                                     </Pressable>
                                 </DataTable.Cell>
-                                <DataTable.Cell textStyle={{fontSize:40, color:'black'}} numeric>{item.par}</DataTable.Cell>
+                                <DataTable.Cell textStyle={{fontSize:40, color:colors.text}} numeric>{item.par}</DataTable.Cell>
                                 </DataTable.Row>
                             ))}
                         </ScrollView>
@@ -203,7 +205,7 @@ function GameScreen({navigation, route}: any) {
                     }}>
                     <Button
                         mode='contained'
-                        buttonColor={colors.fribaRed}
+                        buttonColor={appColors.fribaRed}
                         onPress={() => {
                             HapticFeedback();
                             if (isValid) {
@@ -254,7 +256,7 @@ function GameScreen({navigation, route}: any) {
                                     }
                                 ]);
                             } else {
-                                Alert.alert('All scores not set!', 'End game prematurely?', [
+                                Alert.alert('All scores not set!', 'End game prematurely? Score will not be saved.', [
                                     {
                                         text: 'Yes',
                                         onPress: () => {
@@ -278,4 +280,4 @@ function GameScreen({navigation, route}: any) {
     );
 };
   
-  export default GameScreen;
+export default GameScreen;

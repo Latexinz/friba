@@ -4,7 +4,7 @@ import {
   SafeAreaView,
   Text,
 } from "react-native";
-import { usePreventRemove } from '@react-navigation/native';
+import { usePreventRemove, useTheme } from '@react-navigation/native';
 import { DataTable, ActivityIndicator } from 'react-native-paper';
 import { Dropdown } from 'react-native-element-dropdown';
 import base64 from 'react-native-base64';
@@ -12,7 +12,7 @@ import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { GDrive, APP_DATA_FOLDER_ID } from '@robinbobin/react-native-google-drive-api-wrapper';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import { styles, colors } from "../assets/Styles";
+import { styles, appColors } from "../assets/Styles";
 
 
 const USER_KEY = 'USER_STATE';
@@ -31,6 +31,8 @@ function ScoreScreen({navigation}: any) {
     const [games, setGames] = React.useState([{'label': '', 'value': ''}]);
 
     const gdrive = new GDrive();
+
+    const { colors } = useTheme();
 
     //Finds all saved games when focusing the screen
     React.useEffect(() => {
@@ -106,16 +108,25 @@ function ScoreScreen({navigation}: any) {
         <SafeAreaView style={styles.container}>
             <View style={styles.screen}>
                 {loadingScreen ? <View style={{paddingVertical:'80%'}}>
-                    <ActivityIndicator animating={loadingScreen} size={70} color={colors.fribaGreen}/>
+                    <ActivityIndicator animating={loadingScreen} size={70} color={appColors.fribaGreen}/>
                 </View>
                 : saved ? <View>
                     <View style={styles.option}>
                         <Dropdown
-                            style={styles.dropdownS}
-                            placeholderStyle={styles.settingText}
-                            itemTextStyle={styles.settingText}
-                            selectedTextStyle={styles.settingText}
-                            inputSearchStyle={styles.settingText}
+                            style={{
+                                height: 50,
+                                width: '100%',
+                                borderColor: 'gray',
+                                borderWidth: 0.5,
+                                borderRadius: 8,
+                                paddingHorizontal: 8,
+                            }}
+                            containerStyle={{backgroundColor:colors.background}}
+                            activeColor={appColors.fribaBlue}
+                            placeholderStyle={{fontSize: 18, color: colors.text}}
+                            itemTextStyle={{fontSize: 18, color: colors.text}}
+                            selectedTextStyle={{fontSize: 18, color: colors.text}}
+                            inputSearchStyle={{fontSize: 18, color: colors.text}}
                             searchPlaceholder='search...'
                             placeholder={lastGame}
                             data={games}
@@ -139,24 +150,26 @@ function ScoreScreen({navigation}: any) {
                             }}/>
                     </View>
                     <View style={styles.option}>
-                        <Text style={styles.settingText}>
+                        <Text style={{fontSize: 18, color: colors.text}}>
                             Score: {loadingFile ? 'N/A' : total}
                         </Text>
                     </View>
                     {loadingFile ? <View style={{paddingVertical:'50%'}}>
-                        <ActivityIndicator animating={loadingFile} size={70} color={colors.fribaGreen}/>
+                        <ActivityIndicator animating={loadingFile} size={70} color={appColors.fribaGreen}/>
                     </View>
                     : <View style={styles.option}>
                         <DataTable>
                             <DataTable.Header>
-                                <DataTable.Title textStyle={{fontSize:20, color:'black'}}>Hole</DataTable.Title>
-                                <DataTable.Title textStyle={{fontSize:20, color:'black'}}>Score</DataTable.Title>
+                                <DataTable.Title textStyle={{fontSize:20, color:colors.text}}>Hole</DataTable.Title>
+                                <DataTable.Title textStyle={{fontSize:20, color:colors.text}}>Distance</DataTable.Title>
+                                <DataTable.Title textStyle={{fontSize:20, color:colors.text}}>Score</DataTable.Title>
                             </DataTable.Header>
 
                             {items.slice(from, to).map((item: any) => (
                                 <DataTable.Row key={item.hole}>
-                                    <DataTable.Cell>{item.hole}</DataTable.Cell>
-                                    <DataTable.Cell>{item.score}</DataTable.Cell>
+                                    <DataTable.Cell textStyle={{color:colors.text}}>{item.hole}</DataTable.Cell>
+                                    <DataTable.Cell textStyle={{color:colors.text}}>{item.distance}m</DataTable.Cell>
+                                    <DataTable.Cell textStyle={{color:colors.text}}>{item.score}/{item.par}</DataTable.Cell>
                                 </DataTable.Row>
                             ))}
                 
@@ -177,7 +190,7 @@ function ScoreScreen({navigation}: any) {
                 :<View style={{paddingTop: '50%'}}>
                     <Text style={{
                         textAlign: 'center',
-                        color: 'black',
+                        color: colors.text,
                         fontSize: 40,
                         }}>
                         No saved scores found!
