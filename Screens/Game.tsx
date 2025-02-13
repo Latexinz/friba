@@ -141,59 +141,52 @@ function GameScreen({navigation, route}: any) {
                                 <DataTable.Row key={item.hole}>
                                 <DataTable.Cell textStyle={{fontSize:20, color:colors.text}}>{item.hole}</DataTable.Cell>
                                 <DataTable.Cell textStyle={{fontSize:20, color:colors.text}}>{item.distance}m</DataTable.Cell>
-                                <DataTable.Cell style={{justifyContent: 'center', alignItems:'center'}} textStyle={{fontSize:40, color:colors.text}}>
-                                    <Pressable onPressIn={() => {
-                                        if (item.score > 0) {
-                                            updateScore(item.hole, item.score-1);
-                                            HapticFeedback();
-                                        };
-                                    }}
-                                    onPressOut={() => {
-                                        setIsValid(items.every(item => item.score > 0));
-                                        AsyncStorage.setItem(IN_PROGRESS_KEY, JSON.stringify(items));
-                                    }}>
-                                        <Icon 
-                                        source='minus-circle'
-                                        color={appColors.fribaGrey}
-                                        size={30}/>
-                                    </Pressable>
-                                    {item.score}
-                                    <Pressable onPressIn={() => {
-                                        if (route.params["max"] === true) {
-                                            if (item.score < 10) {
-                                                updateScore(item.hole, item.score+1);
-                                                HapticFeedback();
-                                            }
-                                        } else {
-                                            updateScore(item.hole, item.score+1);
-                                            HapticFeedback();
-                                        }
-                                    }}
-                                    onPressOut={() => {
-                                        setIsValid(items.every(item => item.score > 0));
-                                        AsyncStorage.setItem(IN_PROGRESS_KEY, JSON.stringify(items));
-                                    }}>
-                                        <Icon 
-                                        source='plus-circle'
-                                        color={appColors.fribaGrey}
-                                        size={30}/>
-                                    </Pressable>
-                                </DataTable.Cell>
+                                <View style={{justifyContent: 'center', alignItems:'center'}}>
+                                    <Text style={{fontSize:40, color:colors.text}}>
+                                        <Pressable 
+                                            onPressIn={() => { //Single press on -
+                                                if (item.score > 0) {
+                                                    updateScore(item.hole, item.score-1);
+                                                    HapticFeedback();
+                                                };
+                                            }}
+                                            onPressOut={() => { //After releasing, check if score set for all holes and save game state
+                                                setIsValid(items.every(item => item.score > 0));
+                                                AsyncStorage.setItem(IN_PROGRESS_KEY, JSON.stringify(items));
+                                            }}>
+                                                <Icon 
+                                                source='minus-circle'
+                                                color={appColors.fribaGrey}
+                                                size={30}/>
+                                        </Pressable>
+                                        {item.score}
+                                        <Pressable 
+                                            onPressIn={() => { //Single press on +
+                                                if (route.params["max"] === true) { //Max throws per hole set to 10
+                                                    if (item.score < 10) {
+                                                        updateScore(item.hole, item.score+1);
+                                                        HapticFeedback();
+                                                    }
+                                                } else {
+                                                    updateScore(item.hole, item.score+1);
+                                                    HapticFeedback();
+                                                }
+                                            }}
+                                            onPressOut={() => { //After releasing, check if score set for all holes and save game state
+                                                setIsValid(items.every(item => item.score > 0));
+                                                AsyncStorage.setItem(IN_PROGRESS_KEY, JSON.stringify(items));
+                                            }}>
+                                                <Icon 
+                                                source='plus-circle'
+                                                color={appColors.fribaGrey}
+                                                size={30}/>
+                                        </Pressable>
+                                    </Text>
+                                </View>
                                 <DataTable.Cell textStyle={{fontSize:40, color:colors.text}} numeric>{item.par}</DataTable.Cell>
                                 </DataTable.Row>
                             ))}
                         </ScrollView>
-
-                        {/**<DataTable.Pagination
-                            page={page}
-                            numberOfPages={Math.ceil(items.length / itemsPerPage)}
-                            onPageChange={(page) => setPage(page)}
-                            label={`${from + 1}-${to} of ${items.length}`}
-                            numberOfItemsPerPage={itemsPerPage}
-                            onItemsPerPageChange={onItemsPerPageChange}
-                            showFastPaginationControls
-                            selectPageDropdownLabel={'Rows per page'}
-                        />*/}
                     </DataTable>
                 </View>
                 <View style={{
