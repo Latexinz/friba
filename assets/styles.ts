@@ -18,7 +18,7 @@ export const themes = {
     dark: {
         dark: true,
         colors: {
-            primary: 'rgb(68, 158, 72)',
+            primary: 'rgb(100, 149, 237)',
             background: 'rgb(28, 28, 30)',
             card: 'rgb(50, 50, 50)',
             text: 'rgb(242, 242, 242)',
